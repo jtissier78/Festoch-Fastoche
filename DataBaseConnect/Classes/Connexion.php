@@ -3,6 +3,7 @@ require_once "Parameters.php";
 
 class Connexion{
 
+    
     public function DBCreate(){
         $params=new Parameters();
         $DB_ROOTUSER=$params->getParameter('root','id');
@@ -16,11 +17,11 @@ class Connexion{
         try {
            
             $dbh=new PDO("mysql:host=$DB_HOST", $DB_ROOTUSER, $DB_ROOTPASSWORD); 
-            $dbh ->exec("CREATE DATABASE IF NOT EXISTS $DB_NAME DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci;
-        CREATE USER IF NOT EXISTS'$DB_USER'@'$DB_HOST' IDENTIFIED BY '$DB_PASSWORD';
-        GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'$DB_HOST' ;
-        FLUSH PRIVILEGES;
-        SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));");
+            $dbh ->exec("CREATE DATABASE IF NOT EXISTS `$DB_NAME` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci;
+            CREATE USER IF NOT EXISTS `$DB_USER`@`$DB_HOST` IDENTIFIED BY '$DB_PASSWORD';
+            GRANT ALL PRIVILEGES ON `$DB_NAME`.* TO `$DB_USER`@`$DB_HOST` ;
+            FLUSH PRIVILEGES;
+            SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));");
         } catch (PDOException $exception) {
             die("Connexion Error ${exception}");
         }
@@ -41,7 +42,7 @@ class Connexion{
         }
     }
 
-    public function senRequest(string $request){
+    public function sendRequest(string $request){
         $connexion= $this->PDOInit();
         $connexion->prepare($request)->execute();
     }
