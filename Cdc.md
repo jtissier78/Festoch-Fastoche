@@ -15,18 +15,17 @@ III.	Création	2
 UVP : La pertinence du projet
 Charte graphique :
 Adjectifs sur la forme, la personnalité et l’apparence : 
-couleur chaude sur fond clair
-couleur arrondi
-
+couleur : #B1B1B1 , #ECECEC , 
+forme : rectangulaire aux angles arrondi.
 
 
 IV.	Fonctionnalités :	2
 Arborescence : 
-Fonctionnalités :
+Fonctionnalités : Lister les festivals référencés et leurs caractéristiques
 
 
 V.	Technique	2
-Technologie :
+Technologie : Html, css, php, JS, 
 Nom de domaines :
 Hébergement :
 Maintenance :
