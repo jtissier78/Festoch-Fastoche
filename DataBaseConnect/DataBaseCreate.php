@@ -73,3 +73,9 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS LienLocalFest(
     FOREIGN KEY (id_Localite) REFERENCES Localite(id),
     FOREIGN KEY (id_Festival) REFERENCES Festival(id)
 )");
+
+$dbh->sendRequest("CREATE TABLE IF NOT EXISTS Utilisateurs(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+    pseudo TEXT NOT NULL,
+    password TEXT NOT NULL
+)");
