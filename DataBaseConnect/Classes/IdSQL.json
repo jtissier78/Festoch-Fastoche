@@ -1,11 +1,10 @@
 {
-
-    
+   
     "root":{
         "serveur":"localhost",
         "dbName":"Festoche-Fastoche",
         "id":"root",
-        "password":""
+        "password":"essai"
     },
 
     "MasterUser":{
