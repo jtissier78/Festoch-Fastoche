@@ -1,4 +1,6 @@
 {
+
+    
     "root":{
         "serveur":"localhost",
         "dbName":"Festoche-Fastoche",
