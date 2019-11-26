@@ -1,14 +1,11 @@
 <?php
-
-define( 'DB_NAME', 'festoche-fastoche' );
-define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', '' );
-define( 'DB_HOST', 'localhost' );
+require_once "Classes/Connexion.php";
+$dbh=new Connexion();
 
 try
 {
 
-$bdd = new PDO('mysql:host=localhost;dbname=festoche-fastoche', 'root', '', array(PDO::  MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
+$bdd = $dbh->PDOInit();
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $i=0;
 if (($handle2 = fopen("ff.csv", "r")) !== FALSE) {
