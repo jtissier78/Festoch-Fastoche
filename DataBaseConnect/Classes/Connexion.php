@@ -1,9 +1,18 @@
 <?php
 require_once "Parameters.php";
 
+/**
+ * Class Connexion to DB
+ * 
+ * @author JTissier <jtissier78@gmail.com>
+ */
 class Connexion{
 
-    
+    /**
+     * Function to Create DataBase and MasterUser
+     * @author JTissier <jtissier78@gmail.com>
+     * @return void
+     */
     public function DBCreate(){
         $params=new Parameters();
         $DB_ROOTUSER=$params->getParameter('root','id');
@@ -27,6 +36,12 @@ class Connexion{
         }
     }
 
+    /**
+     * Function to Connect PDO
+     * 
+     * @author JTissier <jtissier78@gmail.com>
+     * @return {PDO Object} $dbh Connection to the DB. 
+     */
     public function PDOInit(){
         $params=new Parameters();
         $DB_USER=$params->getParameter('MasterUser','id');
@@ -42,6 +57,13 @@ class Connexion{
         }
     }
 
+    /**
+     * Execute request.
+     *
+     * @author JTissier <jtissier78@gmail.com>
+     * @param string $request
+     * @return void
+     */
     public function sendRequest(string $request){
         $connexion= $this->PDOInit();
         $connexion->prepare($request)->execute();
