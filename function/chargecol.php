@@ -1,5 +1,5 @@
 <?php 
-$filename = 'panorama-des-festivals.csv';
+$filename = '../csv/ff.csv';
 
 $excel_array = [];
 
@@ -37,11 +37,13 @@ $excel_array = [];
 
     //transform array of colum into a linear array
     function linear($col_data,$line,$col){
-        for($i=$line; $i<=sizeof($col_data);$i++){
+        for($i=$line; $i<sizeof($col_data);$i++){
             $data[$i] = $col_data[$i][$col];
         }
         return $data;
     }
+
+
 
 
 ?>
