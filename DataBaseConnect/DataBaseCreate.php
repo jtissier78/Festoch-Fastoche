@@ -13,8 +13,8 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Departements(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
     num INTEGER,
     nom TEXT,
-    id_Departement INTEGER,
-    FOREIGN KEY (id_Departement) REFERENCES Regions(id))");
+    id_Region INTEGER,
+    FOREIGN KEY (id_Region) REFERENCES Regions(id))");
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Commune(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
