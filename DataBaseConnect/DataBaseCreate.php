@@ -18,7 +18,7 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Departements(
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Commune(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    CodePostal INTEGER,
+    CodePostal VARCHAR(20),
     nom TEXT,
     id_Departement INTEGER,
     FOREIGN KEY (id_Departement) REFERENCES Departements(id))");
@@ -46,7 +46,7 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Festival(
     nom TEXT,
     url TEXT,
     noIdentif INTEGER,
-    DateCreation DATE,
+    DateCreation TEXT, # TODO Type Date
     Periodicite TEXT,
     Longitude FLOAT,
     Latitude FLOAT,
@@ -63,8 +63,8 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS LienCatFest(
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Edition(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     No INTEGER,
-    DateDebut DATE,
-    DateFin DATE,
+    DateDebut TEXT, # TODO Type Date
+    DateFin TEXT, # TODO Type Date
     id_Festival INTEGER,
     id_GPS INTEGER,
     FOREIGN KEY (id_GPS) REFERENCES GPS(id),
