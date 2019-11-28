@@ -40,11 +40,19 @@
             var macarte = null;
 
             var villes = {
+/*             var lat = 48.852969;
+            var lon = 2.349903; */
+            var macarte = null;
+            var coord = <?php echo json_encode($coord)?>;
+            var lat = coord[0];
+            var lon = coord[1];
+
+/*             var villes = {
 	"Paris": { "lat": 48.852969, "lon": 2.349903 },
 	"Brest": { "lat": 48.383, "lon": -4.500 },
 	"Quimper": { "lat": 48.000, "lon": -4.100 },
 	"Bayonne": { "lat": 43.500, "lon": -1.467 }
-};
+}; */
 
 
             // Fonction d'initialisation de la carte
@@ -60,15 +68,15 @@
                 }).addTo(macarte);
 
                 /* var marker = L.marker([lat, lon]).addTo(macarte); */
-
+                
 /*                 for (ville in villes) {
 		var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
     }  */ 
-    for (ville in villes) {
-	var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
-	// Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
-	marker.bindPopup(ville);
-} 
+   /*                  for (ville in villes) {
+                    var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
+                    // Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
+                    marker.bindPopup(ville);
+                }  */
             }
             
             window.onload = function(){
