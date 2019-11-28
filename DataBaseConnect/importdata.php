@@ -1,37 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-define( 'DB_NAME', 'festoche-fastoche' );
-define( 'DB_USER', 'CQCB' );
-define( 'DB_PASSWORD', 'CQCB' );
-define( 'DB_HOST', 'localhost' );
-
-try {
-	$bdd = new PDO('mysql:host=localhost;dbname=festoche-fastoche', 'CQCB', 'CQCB', array(PDO::  MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
-	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	
-	$insertRegion =	("INSERT INTO regions (num,nom) 
-				SELECT :nom,:num
-				WHERE 
-				NOT EXISTS (SELECT * FROM regions WHERE nom = :nom)");
-
-	if (($handleR = fopen("../csv/reg2018.csv", "r")) !== FALSE) {
-		while (($dataR = fgetcsv($handleR, 1000, ";")) !== FALSE) {
-			$statement = $bdd->prepare($insertRegion) or die($bdd->errrorInfo());
-			$statement->bindParam(':num', $dataR[0]);
-			$statement->bindParam(':nom', $dataR[1]);
-			$statement->execute();
-		}		 
-		fclose($handleR); 
-	}
-
-	$insertDepart = ("INSERT INTO departements (num,nom,id_Region) 
-				SELECT :num,:nom,:id_Region
-				WHERE 
-				NOT EXISTS (SELECT * FROM departements WHERE nom = :nom)");
-
-	$region = "SELECT * FROM regions";
-=======
 require_once "Classes/Connexion.php";
 $dbh=new Connexion();
 
@@ -51,7 +18,6 @@ if (($handle2 = fopen("ff.csv", "r")) !== FALSE) {
     }
     fclose($handle2);  
 }
->>>>>>> 3ecdcbf2ad344f68a7df6cd609ade71b68158755
 
 	foreach ($bdd->query($region)as $row) {
 		if (($handleD = fopen("../csv/depts2018.csv", "r")) !== FALSE) {
@@ -88,7 +54,7 @@ if (($handle2 = fopen("ff.csv", "r")) !== FALSE) {
 				echo $rowC['num'];
 				echo $dataC[5];
 				if ($rowC['num'] == $dataC[5]){
-					echo $k." comparaison validé";
+					echo $k." comparaison validï¿½";
 					$k++;
 					$statement = $bdd->prepare($insertCommune) or die($bdd->errrorInfo());
 					$statement->bindParam(':CodePostal', $dataC[1]);
@@ -99,7 +65,7 @@ if (($handle2 = fopen("ff.csv", "r")) !== FALSE) {
 					$l++;
 				}
 				else {
-					echo "comparaison non validée";
+					echo "comparaison non validï¿½e";
 				}
 				$j++;
 			}	*/
