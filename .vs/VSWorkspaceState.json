@@ -1,15 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\admin",
-    "\\css",
     "\\csv",
-    "\\DataBaseConnect",
-    "\\DataBaseConnect\\Classes",
-    "\\fonts",
-    "\\function",
-    "\\js",
-    "\\page"
+    "\\DataBaseConnect"
   ],
   "SelectedNode": "\\DataBaseConnect\\DataBaseCreate.php",
   "PreviewInSolutionExplorer": false
