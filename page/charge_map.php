@@ -48,6 +48,17 @@
             var lat = coord[0];
             var lon = coord[1];
 
+<<<<<<< HEAD
+            var villes = {
+/*             var lat = 48.852969;
+            var lon = 2.349903; */
+            var macarte = null;
+            var coord = <?php echo json_encode($coord)?>;
+            var lat = coord[0];
+            var lon = coord[1];
+
+=======
+>>>>>>> 32c998f92181fdbd972bf2d1efe4e0843d520dbc
 /*             var villes = {
 	"Paris": { "lat": 48.852969, "lon": 2.349903 },
 	"Brest": { "lat": 48.383, "lon": -4.500 },
@@ -68,8 +79,13 @@
                     maxZoom: 20
                 }).addTo(macarte);
 
+<<<<<<< HEAD
+                /* var marker = L.marker([lat, lon]).addTo(macarte); */
+                
+=======
                  var marker = L.marker([lat, lon]).addTo(macarte); 
 
+>>>>>>> 32c998f92181fdbd972bf2d1efe4e0843d520dbc
 /*                 for (ville in villes) {
 		var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
     }  */ 
