@@ -8,7 +8,7 @@ try {
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 	$insertRegion =	("INSERT INTO regions (num,nom) 
-				SELECT :nom,:num
+				SELECT :num,:nom
 				WHERE 
 				NOT EXISTS (SELECT * FROM regions WHERE nom = :nom)");
 
