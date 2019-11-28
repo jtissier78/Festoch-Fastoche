@@ -6,19 +6,19 @@ $dbh->DBCreate();
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Regions(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    num INTEGER,
+    num INT,
     nom TEXT)");
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Departements(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
     num INTEGER,
     nom TEXT,
-    id_Departement INTEGER,
+    id_Region INTEGER,
     FOREIGN KEY (id_Departement) REFERENCES Regions(id))");
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Commune(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    CodePostal VARCHAR(20),
+    CodePostal VARCHAR(100),
     nom TEXT,
     id_Departement INTEGER,
     FOREIGN KEY (id_Departement) REFERENCES Departements(id))");
@@ -31,7 +31,7 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Festival(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     nom TEXT,
     url TEXT,
-    noIdentif INTEGER,
+    noIdentif VARCHAR,
     DateCreation TEXT, # TODO Type Date
     Periodicite TEXT,
     Longitude FLOAT,
