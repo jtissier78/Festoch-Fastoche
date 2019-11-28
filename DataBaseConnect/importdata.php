@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 define( 'DB_NAME', 'festoche-fastoche' );
 define( 'DB_USER', 'CQCB' );
@@ -30,6 +31,27 @@ try {
 				NOT EXISTS (SELECT * FROM departements WHERE nom = :nom)");
 
 	$region = "SELECT * FROM regions";
+=======
+require_once "Classes/Connexion.php";
+$dbh=new Connexion();
+
+try
+{
+
+$bdd = $dbh->PDOInit();
+$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$i=0;
+if (($handle2 = fopen("ff.csv", "r")) !== FALSE) {
+    while (($data2 = fgetcsv($handle2, 1000, ";")) !== FALSE) {
+            $statement = $bdd->prepare("INSERT INTO regions (nom) VALUES (:nom)");
+            $statement->bindParam(':nom', $data2[1]);
+            $statement->execute(array("nom" => $data2[1]));
+
+        }
+    }
+    fclose($handle2);  
+}
+>>>>>>> 3ecdcbf2ad344f68a7df6cd609ade71b68158755
 
 	foreach ($bdd->query($region)as $row) {
 		if (($handleD = fopen("../csv/depts2018.csv", "r")) !== FALSE) {
