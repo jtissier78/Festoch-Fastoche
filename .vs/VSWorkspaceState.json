@@ -1,9 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\admin",
+    "\\css",
     "\\csv",
-    "\\DataBaseConnect"
+    "\\DataBaseConnect",
+    "\\DataBaseConnect\\Classes",
+    "\\fonts",
+    "\\function",
+    "\\js",
+    "\\page"
   ],
-  "SelectedNode": "\\csv\\ff.csv",
+  "SelectedNode": "\\DataBaseConnect\\DataBaseCreate.php",
   "PreviewInSolutionExplorer": false
 }
