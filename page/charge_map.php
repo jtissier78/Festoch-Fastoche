@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,12 +14,20 @@
 
 <?php 
 
+    include("../function/chargecol.php");
+
+    //var_dump($excel_array);
+    
+    $coordenatescol = saveColData($excel_array,0,14);
+
+    $coordline = linear($coordenatescol,0,14);
+       
+    $coord = explode(',',$coordline[54]);
+
     
 
 
 ?>
-
-
 
 
 
@@ -35,10 +41,14 @@
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 	    <script type="text/javascript">
             // On initialise la latitude et la longitude de Paris (centre de la carte)
-            var lat = 48.852969;
-            var lon = 2.349903;
+/*             var lat = 48.852969;
+            var lon = 2.349903; */
             var macarte = null;
+            var coord = <?php echo json_encode($coord)?>;
+            var lat = coord[0];
+            var lon = coord[1];
 
+<<<<<<< HEAD
             var villes = {
 /*             var lat = 48.852969;
             var lon = 2.349903; */
@@ -47,6 +57,8 @@
             var lat = coord[0];
             var lon = coord[1];
 
+=======
+>>>>>>> 32c998f92181fdbd972bf2d1efe4e0843d520dbc
 /*             var villes = {
 	"Paris": { "lat": 48.852969, "lon": 2.349903 },
 	"Brest": { "lat": 48.383, "lon": -4.500 },
@@ -67,8 +79,13 @@
                     maxZoom: 20
                 }).addTo(macarte);
 
+<<<<<<< HEAD
                 /* var marker = L.marker([lat, lon]).addTo(macarte); */
                 
+=======
+                 var marker = L.marker([lat, lon]).addTo(macarte); 
+
+>>>>>>> 32c998f92181fdbd972bf2d1efe4e0843d520dbc
 /*                 for (ville in villes) {
 		var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
     }  */ 
