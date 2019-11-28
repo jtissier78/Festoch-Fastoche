@@ -1,14 +1,14 @@
 {
     "root":{
         "serveur":"localhost",
-        "dbName":"Festoche-Fastoche",
+        "dbName":"festoche-fastoche",
         "id":"root",
-        "password":"+GvGcjg^"
+        "password":"1312"
     },
 
     "MasterUser":{
         "serveur":"localhost",
-        "dbName":"Festoche-Fastoche",
+        "dbName":"Festoche-fastoche",
         "id":"CQCB",
         "password":"CQCB"
     }
