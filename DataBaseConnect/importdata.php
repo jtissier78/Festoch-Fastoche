@@ -88,13 +88,13 @@ try {
 				WHERE 
 				NOT EXISTS (SELECT * FROM categorie WHERE nom = :nom)");
 
-	if (($handleCatégorie = fopen("../csv/panorama-des-festivals.csv", "r")) !== FALSE) {
-		while (($dataCategorie = fgetcsv($handleCatégorie, 1000, ";")) !== FALSE) {
+	if (($handleCatï¿½gorie = fopen("../csv/panorama-des-festivals.csv", "r")) !== FALSE) {
+		while (($dataCategorie = fgetcsv($handleCatï¿½gorie, 1000, ";")) !== FALSE) {
 			$statement = $bdd->prepare($insertCategorie) or die($bdd->errrorInfo());
 			$statement->bindParam(':nom', $dataCategorie[2]);
 			$statement->execute();
 		}		 
-		fclose($handleCatégorie); 
+		fclose($handleCatï¿½gorie); 
 	}
 
 }
