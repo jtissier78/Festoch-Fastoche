@@ -6,7 +6,7 @@ define( 'DB_HOST', 'localhost' );
 try {
 	$bdd = new PDO('mysql:host=localhost;dbname=festoche-fastoche', 'CQCB', 'CQCB', array(PDO::  MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	/*
+	
 	$insertRegion =	("INSERT INTO regions (num,nom) 
 				SELECT :num,:nom
 				WHERE 
@@ -60,11 +60,12 @@ try {
 					$statement->bindParam(':nom', $dataC[2]);
 					$statement->bindParam(':id_Departement', $rowC['id']);
 					$statement->execute();
+					echo $dataC[2]."ok\n";
 				}
 			}
 			fclose($handleC); 
 		}
-	}*/
+	}
 
 	$insertFestival = ("INSERT INTO festival (nom,url,numIdentif,DateCreation,Periodicite,Longitude,Latitude,id_Commune) 
 				SELECT :nom,:url,:numIdentif,:DateCreation,:Periodicite,:Longitude,:Latitude,:id_Commune
@@ -86,7 +87,7 @@ try {
 					$statement->bindParam(':Latitude', $dataF[15]);
 					$statement->bindParam(':id_Commune', $rowF['id']);
 					$statement->execute();
-					echo "festival"." ".$i." "."inseree\n";
+					echo $dataF[0]."ok\n";
 					$i++;
 				}
 			}		 
