@@ -11,14 +11,14 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Regions(
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Departements(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    num INTEGER,
+    num VARCHAR(10),
     nom TEXT,
-    id_Departement INTEGER,
-    FOREIGN KEY (id_Departement) REFERENCES Regions(id))");
+    id_Region INTEGER,
+    FOREIGN KEY (id_Region) REFERENCES Regions(id))");
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Commune(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    CodePostal VARCHAR(20),
+    CodePostal VARCHAR(100),
     nom TEXT,
     id_Departement INTEGER,
     FOREIGN KEY (id_Departement) REFERENCES Departements(id))");
@@ -31,11 +31,11 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Festival(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     nom TEXT,
     url TEXT,
-    noIdentif INTEGER,
+    numIdentif VARCHAR(100),
     DateCreation TEXT, # TODO Type Date
     Periodicite TEXT,
-    Longitude FLOAT,
-    Latitude FLOAT,
+    Longitude VARCHAR(100),
+    Latitude VARCHAR(100),
     id_Commune INTEGER,
     FOREIGN KEY (id_Commune) REFERENCES Commune(id))");
 
@@ -48,12 +48,10 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS LienCatFest(
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Edition(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    No INTEGER,
-    DateDebut TEXT, # TODO Type Date
-    DateFin TEXT, # TODO Type Date
+    Annee INTEGER,
+    DateDebut TEXT,  
+    DateFin TEXT,  
     id_Festival INTEGER,
-    id_GPS INTEGER,
-    FOREIGN KEY (id_GPS) REFERENCES GPS(id),
     FOREIGN KEY (id_Festival) REFERENCES Festival(id)
 )");
 
