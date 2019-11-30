@@ -18,8 +18,12 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Departements(
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Commune(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+<<<<<<< HEAD
     CodePostal VARCHAR(10),
     CodeInsee VARCHAR(10),
+=======
+    CodePostal VARCHAR(100),
+>>>>>>> 9deff647881015e5e827dae79d424102d4861796
     nom TEXT,
     id_Departement INTEGER,
     FOREIGN KEY (id_Departement) REFERENCES Departements(id))");
