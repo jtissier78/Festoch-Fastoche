@@ -31,10 +31,7 @@ header {
   height: 4em;
 }
 
-.main
-{
 
-}
 .sidenav 
 {
   border-radius: 5px;
@@ -95,6 +92,64 @@ footer {
     margin:1em;
 }
 
+
+/*rui css start*/
+
+.dropdown-menu {
+  transform: translatey(5%) !important;
+
+ 
+}
+
+
+.dropdown-submenu {
+  position: relative;
+
+}
+
+
+
+
+
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+  margin-left: 5.9em;
+  top:1.2em;
+  
+}
+
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0%;
+  height: 0%;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #ccc;
+
+ 
+}
+
+.dropdown-submenu:hover>a:after {
+  border-left-color: #fff;
+  /*background: lawngreen;*/
+}
+
+.dropdown-submenu.pull-left {
+  float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+  
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
+}
+
+/*rui css end*/
 
 
 .form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
