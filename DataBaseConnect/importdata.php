@@ -1,18 +1,12 @@
 <?php
-define( 'DB_NAME', 'festoche-fastoche' );
-define( 'DB_USER', 'CQCB' );
-define( 'DB_PASSWORD', 'CQCB' );
-define( 'DB_HOST', 'localhost' );
+require_once "Classes/Connexion.php";
+
 try {
-	$bdd = new PDO('mysql:host=localhost;dbname=festoche-fastoche', 'CQCB', 'CQCB', array(PDO::  MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''));
+	$dbh = new Connexion();
+	$bdd = $dbh->PDOInit();
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-<<<<<<< HEAD
 	
  	$insertRegion =	("INSERT INTO regions (num,nom) 
-=======
-	/*
-	$insertRegion =	("INSERT INTO regions (num,nom) 
->>>>>>> 9deff647881015e5e827dae79d424102d4861796
 				SELECT :num,:nom
 				WHERE 
 				NOT EXISTS (SELECT * FROM regions WHERE nom = :nom)");
@@ -73,20 +67,14 @@ try {
 			}
 			fclose($handleC); 
 		}
-<<<<<<< HEAD
 	}
 	
-=======
-	}*/
-
->>>>>>> 9deff647881015e5e827dae79d424102d4861796
 	$insertFestival = ("INSERT INTO festival (nom,url,numIdentif,DateCreation,Periodicite,Longitude,Latitude,id_Commune) 
 				SELECT :nom,:url,:numIdentif,:DateCreation,:Periodicite,:Longitude,:Latitude,:id_Commune
 				WHERE 
 				NOT EXISTS (SELECT * FROM festival WHERE nom = :nom)");
 
 	$commune = "SELECT * FROM commune";
-<<<<<<< HEAD
 	
  if (($handleF = fopen("../csv/panorama-des-festivals.csv", "r")) !== FALSE) {
 	while (($dataF = fgetcsv($handleF, 1000, ";")) !== FALSE) {
@@ -114,30 +102,6 @@ try {
 } 
 	
 	
-=======
-	foreach ($bdd->query($commune)as $rowF) {
-		if (($handleF = fopen("../csv/panorama-des-festivals.csv", "r")) !== FALSE) {
-			while (($dataF = fgetcsv($handleF, 1000, ";")) !== FALSE) {
-				if ($rowF['CodePostal'] == $dataF[12]) {
-					$statement = $bdd->prepare($insertFestival) or die($bdd->errrorInfo());
-					$statement->bindParam(':nom', $dataF[0]);
-					$statement->bindParam(':url', $dataF[5]);
-					$statement->bindParam(':numIdentif', $dataF[6]);
-					$statement->bindParam(':DateCreation', $dataF[11]);
-					$statement->bindParam(':Periodicite', $dataF[4]);
-					$statement->bindParam(':Longitude', $dataF[14]);
-					$statement->bindParam(':Latitude', $dataF[15]);
-					$statement->bindParam(':id_Commune', $rowF['id']);
-					$statement->execute();
-					echo "festival"." ".$i." "."inseree\n";
-					$i++;
-				}
-			}		 
-			fclose($handleF); 
-		}
-	}
-
->>>>>>> 9deff647881015e5e827dae79d424102d4861796
 	$insertCategorie = ("INSERT INTO categorie (nom) 
 				SELECT :nom
 				WHERE 
@@ -150,7 +114,6 @@ try {
 			$statement->execute();
 		}		 
 		fclose($handleCategorie); 
-<<<<<<< HEAD
 	} 
 
 	$LienCateFest= ("INSERT INTO liencatfest (id_Categorie,id_Festival)
@@ -214,42 +177,6 @@ try {
 		}
 	}
 			
-=======
-	}
-
-	$insertIdCategorie = ("INSERT INTO liencatfest (id_Categorie)
-				SELECT :idCat
-				WHERE
-				NOT EXISTS (SELECT * FROM liencatfest WHERE id_Categorie = :idCat)");
-
-	$insertIdFestival = ("INSERT INTO liencatfest (id_Festival)
-				SELECT :idFesti
-				WHERE
-				NOT EXISTS (SELECT * FROM liencatfest WHERE id_Festival = :idFesti)");
-
-	$categorie = "SELECT * FROM categorie";
-	$festival = "SELECT * FROM festival" ;
-
-	if (($handleCategorie = fopen("../csv/panorama-des-festivals.csv", "r")) !== FALSE) {
-		while (($dataFest = fgetcsv($handleCategorie, 1000, ";")) !== FALSE) {
-			foreach ($bdd->query($categorie)as $rowC) {
-				if ($rowC['nom'] == $dataFest[2]) {
-					foreach ($bdd->query($festival)as $rowF) {
-						if ($rowC['nom'] == $dataFest[0]) {
-							$statementC = $bdd->prepare($insertIdCategorie) or die($bdd->errrorInfo());
-							$statementC->bindParam(':idCat', $rowC['id']);
-							$statementC->execute();
-							$statementF = $bdd->prepare($insertIdCategorie) or die($bdd->errrorInfo());
-							$statementF->bindParam(':idFesti', $rowF['id']);
-							$statementF->execute();
-						}
-					}
-				}	
-			}
-		}		 
-		fclose($handleCategorie); 
-	}
->>>>>>> 9deff647881015e5e827dae79d424102d4861796
 }
 catch(exception $e) {
 	die('ERREUR : '.$e->getMessage());
