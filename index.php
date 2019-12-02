@@ -9,11 +9,6 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
-<<<<<<< HEAD
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
-=======
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <!-- Stylesheet of calendar -->
@@ -22,7 +17,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
->>>>>>> c817c355fc478d98635f4ce629133ab699ac3124
 
   <!-- Script jquery -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -34,27 +28,21 @@
 </head>
 
 <body>
-<!-- HEADER -->
-    <header>
-        <div class= "container-fluid">
-          <!-- <div class="row "> -->
-            <div class="col-sm-12 ">
-              <div class="row">
-                <div class="col-xs-2 logo"> 
-                <img class="img-fluid rounded" src="icons8.png" alt="photo de profil">
-                </div>
-                <div class="col vide"> 
-                </div>
-            <!--   </div> -->
-            </div>  
-          </div>
-        </div>
-    </header>
 
-<main>
- 
-  <div class="contener-fluid col-sm-12 main"> 
+<main>   
+
+  <div class="contener-fluid col-sm-12 mb-4 "> 
       <div class="row main mr-1 ml-1">
+        <!-- HEADER -->
+    
+        <div class= "container-fluid mt-4 mb-4 header">
+        <div class="row">
+            <div class="col-sm-12 ">
+            <img class="img-fluid rounded" src="icons8.png">
+            </div>
+        </div>
+        </div> 
+
             <!-- navbar -->
           <div class="container-fluid sidenav">
             <div class="row main">
@@ -104,7 +92,7 @@
                     </ul>
                 </div>
                 <!-- colone resultats -->
-                <div class="col-10 pt-2 text-center result">
+                <div class="col-10 pt-2 text-center result ">
                   <h2><br>
                       <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>Recherches par type et ville</h2>
                       <!-- Button trigger modal -->
@@ -113,59 +101,55 @@
                      </button>
 
 <!-- Modal -->
-<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div class="dropdown open">
-  <button class="btn btn-secondary dropdown-toggle"
-          type="button" id="dropdownMenu3" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-
-                        </button>
-                        <div class="dropdown-menu">
-                            <h6 class="dropdown-header">Dropdown header</h6>
-                            <a class="dropdown-item" href="#!">Action</a>
-                            <a class="dropdown-item" href="#!">Another action</a>
-                        </div>
-                    </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                                        <br><br>
-                 <div class="col-12 pt-3 titreresult">
-                  <h2>
-                      <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>kikouuu</h2>
-                  <h6 class="hidden-sm-down"></h6>
+          <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-                  <!-- colone resultats -->
-                  <div class="col-12 pt-3 mt-1 resultrecherche">
-                  <h2>
-                      <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>  </h2>
-                  <h6 class="hidden-sm-down"></h6>
-                </div>
-                </div>  
-            </div>
-        </div>
-     </div>
-  </div>
-  
-</main>
+                <div class="modal-body">
+                <div class="dropdown open">
+            <button class="btn btn-secondary dropdown-toggle"
+                    type="button" id="dropdownMenu3" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
 
-<!-- FOOTER -->
+                                  </button>
+                                  <div class="dropdown-menu">
+                                      <h6 class="dropdown-header">Dropdown header</h6>
+                                      <a class="dropdown-item" href="#!">Action</a>
+                                      <a class="dropdown-item" href="#!">Another action</a>
+                                  </div>
+                              </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                  </div>
+                                  </div>
+                              </div>
+                              </div>
+                                                  <br><br>
+                          <div class="col-12 pt-3 titreresult">
+                            <h2>
+                                <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>kikouuu</h2>
+                            <h6 class="hidden-sm-down"></h6>
+                          </div>
+                            <!-- colone resultats -->
+                            <div class="col-12 pt-3 mb-5 resultrecherche">
+                            <h2>
+                                <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>  </h2>
+                            <h6 class="hidden-sm-down"></h6>
+                          </div>
+                          </div>  
+                      </div>
+                      </div>
+              </div>
+              <!-- FOOTER -->
     <footer>
-      <div class="container-fluid"> 
+      <div class="container-fluid mt-4"> 
         <div class="row "> 
           <div class="col-sm-12 "> 
           </div>
@@ -173,6 +157,11 @@
         </div>    
         <p>Footer</p>
     </footer>
+            </div>
+            </div>
+  
+</main>
+
 
 </body>
 </html>

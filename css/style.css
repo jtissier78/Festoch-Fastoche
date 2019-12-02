@@ -1,17 +1,13 @@
 
-body
-{
-  margin:1em;
-  
 
-}
-
-header {
+.header {
     background-color: #B1B1B1;
     color: white;
     height:  6em;
     border-radius: 5px;
-    margin:1em;
+    padding: 1rem;
+    width:100%;
+   
   }
 
 .logo
@@ -31,10 +27,6 @@ header {
   height: 4em;
 }
 
-.main
-{
-
-}
 .sidenav 
 {
   border-radius: 5px;
@@ -42,9 +34,10 @@ header {
   background-color: #ECECEC;
 /*   height: 45em; */
 }
-
  .centrale
 {  
+  min-height: 500px;
+  max-height: 600px;
   border-radius: 5px;
   margin:1em;
   /* padding: 1em; */
@@ -55,21 +48,20 @@ header {
 .result
 {
 /*   margin:1em; */
+
   border: 1rem solid white ;
   border-right-style: none;
   border-top-style: none;
   border-bottom-style: none;
-  background-color: 5 #ECECEC;
-  
+  background-color: 5 #ECECEC; 
   /* height: 45em;  */
 }
 
 .resultrecherche
 {
-
-  min-height: 70vh;
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
+min-height: 500px;
+border-radius: 5px;
+background-color: rgb(255, 255, 255);
  /*  height: 40em;   */
 }
 
@@ -78,21 +70,20 @@ header {
   min-height: 10vh;
   border-radius: 5px;
   background-color:rgb(240, 236, 236); 
+  margin:1em;
 }
 
-main
+div.main
 {
-  
+  box-sizing: content-box;
   border-radius: 5px;
 }
 
 footer {
   background-color: #B1B1B1;
-    color: white;
-    height:  6em;
-    border-radius: 5px;
-    padding: 1em;
-    margin:1em;
+  color: white;
+  height:  6em;
+  border-radius: 5px; 
 }
 
 
