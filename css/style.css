@@ -2,8 +2,10 @@
 body
 {
   margin:1em;
+  
 
 }
+
 header {
     background-color: #B1B1B1;
     color: white;
@@ -16,9 +18,9 @@ header {
 {
   border-radius: 5px;
   background-color: #D9D9D9;
-  width: 70px;
   height: 4em;
   margin:1em;
+  width: 4em;
 }
 
 .titreHeader
@@ -28,98 +30,72 @@ header {
   margin:1em;
   height: 4em;
 }
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {height: 755px}
 
-/* Set gray background color and 100% height */
-.sidenav {
+.main
+{
+
+}
+.sidenav 
+{
   border-radius: 5px;
-  padding: 1em;
-  margin:1em;
-  margin-right: 5em;
+/*   margin:1em; */
   background-color: #ECECEC;
-  
+/*   height: 45em; */
 }
 
-.centrale
+ .centrale
 {  
-    border-radius: 5px;
-    padding: 2em;
-    margin:1em;
-    background-color: #ECECEC;
-    
+  border-radius: 5px;
+  margin:1em;
+  /* padding: 1em; */
+  /* padding: 1em; */
+  /* height: 45em; */
 }
 
 .result
 {
- 
-  border-radius: 5px;
-  background-color: #D9D9D9;
+/*   margin:1em; */
+  border: 1rem solid white ;
+  border-right-style: none;
+  border-top-style: none;
+  border-bottom-style: none;
+  background-color: 5 #ECECEC;
   
- 
+  /* height: 45em;  */
 }
 
-/* Set black background color, white text and some padding */
+.resultrecherche
+{
+
+  min-height: 70vh;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+ /*  height: 40em;   */
+}
+
+.titreresult
+{
+  min-height: 10vh;
+  border-radius: 5px;
+  background-color:rgb(240, 236, 236); 
+}
+
+main
+{
+  
+  border-radius: 5px;
+}
+
 footer {
   background-color: #B1B1B1;
-  color: white;
-  padding: 1em;
-  margin:2em;
-  border-radius: 5px;
-  height: 10%; 
+    color: white;
+    height:  6em;
+    border-radius: 5px;
+    padding: 1em;
+    margin:1em;
 }
 
-/* formulaire select + checkbox */
 
-#multiselect {
-  width: 200px;
-}
-
-#selectBox {
-  position: relative;
-}
-
-#selectBox select {
-  width: 100%;
-  font-weight: bold;
-}
-
-#overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-#checkboxes {
-  display: none;
-  border: 1px #dadada solid;
-}
-
-#checkboxes label {
-  display: block;
-}
-
-#checkboxes label:hover {
-  background-color: #1e90ff;
-}
-
-/* check box modal */
-.form-group input[type="checkbox"] {
-  display: none;
-}
-
-.form-group input[type="checkbox"] + .btn-group > label span {
-  width: 20px;
-}
-
-.form-group input[type="checkbox"] + .btn-group > label span:first-child {
-  display: none;
-}
-.form-group input[type="checkbox"] + .btn-group > label span:last-child {
-  display: inline-block;   
-}
 
 .form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
   display: inline-block;

@@ -54,6 +54,23 @@
     </div>
 </div>
 
+<body>
+<!-- HEADER -->
+    <header>
+        <div class= "container-fluid">
+          <!-- <div class="row "> -->
+            <div class="col-sm-12 ">
+              <div class="row">
+                <div class="col-xs-2 logo"> 
+                <img class="img-fluid rounded" src="icons8.png" alt="photo de profil">
+                </div>
+                <div class="col vide"> 
+                </div>
+            <!--   </div> -->
+            </div>  
+          </div>
+        </div>
+    </header>
 
 
 <div class="container">
