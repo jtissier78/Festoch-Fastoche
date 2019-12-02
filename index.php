@@ -111,6 +111,20 @@
   </div> 
 </div>
 
+<div class="row">
+        <div class="col-lg-6 mx-auto">
+            <label class="text-white mb-3 lead">Where do you live?</label>
+            <!-- Multiselect dropdown -->
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100" id="optid" multiple>
+                <option value="1">United Kingdom</option>
+                <option value="2">United States</option>
+                <option value="3">France</option>
+                <option value="4">Germany</option>
+                <option value="5">Italy</option>
+            </select><!-- End -->
+        </div>
+    </div>
+
 
 
 
@@ -140,6 +154,7 @@
   <!-- rui' script -->
   <script src="js/vendor/bootstrap-select.min.js" async></script>
   <script src="js/modal_menu.js" async></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 
 
 </body>
