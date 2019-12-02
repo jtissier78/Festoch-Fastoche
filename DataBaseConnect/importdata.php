@@ -76,28 +76,27 @@ try {
 
 	$commune = "SELECT * FROM commune";
 	
- if (($handleF = fopen("../csv/panorama-des-festivals.csv", "r")) !== FALSE) {
-	while (($dataF = fgetcsv($handleF, 1000, ";")) !== FALSE) {
-		$ci=$dataF[13];
-		$cp2= "SELECT id FROM commune where CodeInsee = :CI";
-		$statement = $bdd->prepare($cp2);
-		$statement->bindParam(':CI', $ci);
-		$statement->execute();
-		$c= $statement->fetch();
-		$ci = $c[0];
-		$statement = $bdd->prepare($insertFestival);
-		$statement->bindParam(':nom', $dataF[0]);
-		$statement->bindParam(':url', $dataF[5]);
-		$statement->bindParam(':numIdentif', $dataF[6]);
-		$statement->bindParam(':DateCreation', $dataF[11]);
-		$statement->bindParam(':Periodicite', $dataF[4]);
-		$statement->bindParam(':Longitude', $dataF[14]);
-		$statement->bindParam(':Latitude', $dataF[15]);
-		$statement->bindParam(':id_Commune', $ci);
-		$statement->execute();
-		echo $dataF[0]." "."ok\n";
-
-	}
+ 	if (($handleF = fopen("../csv/panorama-des-festivals.csv", "r")) !== FALSE) {
+		while (($dataF = fgetcsv($handleF, 1000, ";")) !== FALSE) {
+			$ci=$dataF[13];
+			$cp2= "SELECT id FROM commune where CodeInsee = :CI";
+			$statement = $bdd->prepare($cp2);
+			$statement->bindParam(':CI', $ci);
+			$statement->execute();
+			$c= $statement->fetch();
+			$ci = $c[0];
+			$statement = $bdd->prepare($insertFestival);
+			$statement->bindParam(':nom', $dataF[0]);
+			$statement->bindParam(':url', $dataF[5]);
+			$statement->bindParam(':numIdentif', $dataF[6]);
+			$statement->bindParam(':DateCreation', $dataF[11]);
+			$statement->bindParam(':Periodicite', $dataF[4]);
+			$statement->bindParam(':Longitude', $dataF[14]);
+			$statement->bindParam(':Latitude', $dataF[15]);
+			$statement->bindParam(':id_Commune', $ci);
+			$statement->execute();
+			echo $dataF[0]." "."ok\n";
+		}
 	fclose($handleF); 
 } 
 	
@@ -143,8 +142,8 @@ try {
 			$statement3->bindParam(':idFesti', $idFest);
 			$statement3->execute(); 
 			echo $dataFest[0]." "."ok\n";
-			}		
-			fclose($handleCategorieL);  
+		}		
+		fclose($handleCategorieL);  
 	} 
 
 	$LienCateFest= ("INSERT INTO edition (Annee,DateDebut,DateFin,id_Festival)
@@ -172,11 +171,9 @@ try {
 			$statement->bindParam(':idfesti', $Dn);
 			$statement->execute(); 
 			echo $dataDate[0]." "."ok\n";
-			
-
 		}
 	}
-			
+
 }
 catch(exception $e) {
 	die('ERREUR : '.$e->getMessage());
