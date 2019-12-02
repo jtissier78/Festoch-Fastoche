@@ -8,7 +8,7 @@ try {
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 	$insertRegion =	("INSERT INTO regions (num,nom) 
-				SELECT :nom,:num
+				SELECT :num,:nom
 				WHERE 
 				NOT EXISTS (SELECT * FROM regions WHERE nom = :nom)");
 
@@ -88,13 +88,13 @@ try {
 				WHERE 
 				NOT EXISTS (SELECT * FROM categorie WHERE nom = :nom)");
 
-	if (($handleCat�gorie = fopen("../csv/panorama-des-festivals.csv", "r")) !== FALSE) {
-		while (($dataCategorie = fgetcsv($handleCat�gorie, 1000, ";")) !== FALSE) {
+	if (($handleCategorie = fopen("../csv/panorama-des-festivals.csv", "r")) !== FALSE) {
+		while (($dataCategorie = fgetcsv($handleCategorie, 1000, ";")) !== FALSE) {
 			$statement = $bdd->prepare($insertCategorie) or die($bdd->errrorInfo());
 			$statement->bindParam(':nom', $dataCategorie[2]);
 			$statement->execute();
 		}		 
-		fclose($handleCat�gorie); 
+		fclose($handleCategorie); 
 	}
 
 }

@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 /* //var_dump($_POST);
 
@@ -47,17 +47,10 @@ for($i=0;$i<$size;$i++) {
 
 } */
 
-
-
-
-
-
 ?>
-
 
 <!-- <form action="" method="post">
     Nom de Ville: <input type="text" name="nom">
         <input  type="button" value="Search" id="but2">
 
 </form> -->
-

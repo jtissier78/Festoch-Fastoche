@@ -57,44 +57,46 @@
 
 
 <div class="container">
-  <!-- <div class="form-group">
-  <select class="selectpicker" multiple>
-  <option>Mustard</option>
-  <option>Ketchup</option>
-  <option>Barbecue</option>
-</select>
 
-  </div> -->
 
 
 
   <div class="modal_menu">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal">Recherche</button>
 
-     <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="form-group">
-  
-              <select class="selectpicker">
-              <option value="" disabled selected>Indiquez Votre Recherche</option>
-                <optgroup label="Group 1">
-                  <option value="1">Region</option>
-                  <option value="2">Option 2</option>
-                </optgroup>
-                <optgroup label="team 2">
-                  <option value="3">Option 3</option>
-                  <option value="4">Option 4</option>
-                </optgroup>
-              </select>
-              <button class="btn-save btn btn-primary btn">Save</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
+
+
+
+
+
+    <div class="container">
+  	  <div class="row">
+        <h5>Choisissez votre recherche</h5>
+        
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Region
+            </button>
+            
+            
+              <?php include("page/region.php"); ?>
+
+        </div>
+      </div>
+    </div>
+<!-- end -->
+          
         </div>
       </div>
   </div> 
 </div>
+
+
+
+
 </main>
 
 <footer>
@@ -124,5 +126,34 @@
 
 
 </body>
+
+
+
+  <!-- <div class="form-group">
+  <select class="selectpicker" multiple>
+  <option>Mustard</option>
+  <option>Ketchup</option>
+  <option>Barbecue</option>
+</select>
+
+  </div> -->
+
+
+        <!-- start -->
+<!--         <div class="container">
+    <nav class="nav flex-column col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+        
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle backgroundnav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        Region
+            </a>
+            <div class="dropdown-menu dropdown-menu-side" aria-labelledby="Preview">
+                <a class="dropdown-item" href="#">Mobile Phone</a>
+                <a class="dropdown-item" href="#">Tablet</a>
+                <a class="dropdown-item" href="#">Laptop</a>
+                <a class="dropdown-item" href="#">Desktop</a>
+            </div>
+        </li> -->
+
 
 </html>
