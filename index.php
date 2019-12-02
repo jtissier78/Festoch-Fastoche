@@ -4,167 +4,163 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js">
-</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">
-</script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js">
-</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
 
 </head>
+
 <body>
+<!-- HEADER -->
+    <header>
+        <div class= "container-fluid">
+          <!-- <div class="row "> -->
+            <div class="col-sm-12 ">
+              <div class="row">
+                <div class="col-xs-2 logo"> 
+                <img class="img-fluid rounded" src="icons8.png" alt="photo de profil">
+                </div>
+                <div class="col vide"> 
+                </div>
+            <!--   </div> -->
+            </div>  
+          </div>
+        </div>
+    </header>
 
-<header class="container-fluid ">
-<div class="row content">
-<div class="col-sm-1  logo"> 
-      </div>
-      <div class="col-sm-2 vide"> 
-      </div>
-      <div class="col-sm-7 visible-lg titreHeader"> 
-      </div>
-      </div>
-</header>
+<main>
+ 
+  <div class="contener-fluid col-sm-12 main"> 
+      <div class="row main mr-1 ml-1">
+            <!-- navbar -->
+          <div class="container-fluid sidenav">
+            <div class="row main">
+                <div class="col-2 collapse show d-md-flex pt-2 pl-0 min-vh-100" id="sidebar">
+                    <ul class="nav flex-column flex-nowrap overflow-hidden">
+                        <li class="nav-item">
+                            <a class="nav-link text-truncate" href="#"><i class="fa fa-home"></i> <span class="d-none d-sm-inline">Overview</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i> <span class="d-none d-sm-inline"><!-- Search form -->
+                            <form class="form-inline active-cyan-4">
+                            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                                aria-label="Search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            </form></span></a>
+                            <div class="collapse" id="submenu1" aria-expanded="false">
+                                <ul class="flex-column pl-2 nav">
+                                    <li class="nav-item"><a class="nav-link py-0" href="#"><span>Orders</span></a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1"><span>Customers</span></a>
+                                        <div class="collapse" id="submenu1sub1" aria-expanded="false">
+                                            <ul class="flex-column nav pl-4">
+                                                <li class="nav-item">
+                                                    <a class="nav-link p-1" href="#">
+                                                        <i class="fa fa-fw fa-clock-o"></i> Daily </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link p-1" href="#">
+                                                        <i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link p-1" href="#">
+                                                        <i class="fa fa-fw fa-bar-chart"></i> Charts </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link p-1" href="#">
+                                                        <i class="fa fa-fw fa-compass"></i> Areas </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Analytics</span></a></li>
+                        <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Export</span></a></li>
+                    </ul>
+                </div>
+                <!-- colone resultats -->
+                <div class="col-10 pt-2 text-center result">
+                  <h2><br>
+                      <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>Recherches par type et ville</h2>
+                      <!-- Button trigger modal -->
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Selection
+                     </button>
 
-<div class="row">
-  <div class="col-sm-9">
-    Level 1: .col-sm-9
-    <div class="row">
-      <div class="col-8 col-sm-6">
-        Level 2: .col-8 .col-sm-6
-      </div>
-      <div class="col-4 col-sm-6">
-        Level 2: .col-4 .col-sm-6
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- navbar -->
-    <div class="container-fluid text-center">    
-      <div class="row content">
-        <div class=" col-sm-2 hidden-xs hidden-sm hidden-md sidenav">
-          <p><a href="#">Link</a></p>
-          <p><a href="#">Link</a></p>
-          <p><a href="#">Link</a></p>
-       </div>
-     </div>
-    </div>
-
-
-    <div class="col-sm-9 text-left centrale"> 
-<div class="col-sm-2 "> 
-
-<!-- recherches modal -->
-<div class="container">
-	<div class="row">
-		<h2>Recherche par type et par ville</h2>
-		<a href="#" class="btn btn-default" data-toggle="modal" data-target="#myModal">Recherche</a>
-	</div>
-</div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+<!-- Modal -->
+<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title">Sélectionnez vos critères</h4>
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <div class="modal-body">
-         <div class="[ form-group ]"><!-- checkbox -->
-            <input type="checkbox" name="fancy-checkbox-default" id="fancy-checkbox-default" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-default" class="[ btn btn-default ]">
-                    <span class="[ glyphicon glyphicon-ok ]"></span>
-                    <span> </span>
-                </label>
-                <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-                <h8>Nom de la ville</h8>
-                </label>
-            </div>
-        </div><!-- checkbox -->
-        <div class="[ form-group ]"><!-- checkbox -->
-            <input type="checkbox" name="fancy-checkbox-default1" id="fancy-checkbox-default1" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-default1" class="[ btn btn-default ]">
-                    <span class="[ glyphicon glyphicon-ok ]"></span>
-                    <span> </span>
-                </label>
-                <label for="fancy-checkbox-default1" class="[ btn btn-default active ]">
-                <h8>Nom de la ville</h8>
-                </label>
-            </div>
-        </div><!-- checkbox -->
-        <div class="[ form-group ]"><!-- checkbox -->
-            <input type="checkbox" name="fancy-checkbox-default2" id="fancy-checkbox-default2" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-default2" class="[ btn btn-default ]">
-                    <span class="[ glyphicon glyphicon-ok ]"></span>
-                    <span> </span>
-                </label>
-                <label for="fancy-checkbox-default2" class="[ btn btn-default active ]">
-                <h8>Nom de la ville</h8>
-                </label>
-            </div>
-        </div><!-- checkbox -->
-        <div class="[ form-group ]"><!-- checkbox -->
-            <input type="checkbox" name="fancy-checkbox-default3" id="fancy-checkbox-default3" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-default3" class="[ btn btn-default ]">
-                    <span class="[ glyphicon glyphicon-ok ]"></span>
-                    <span> </span>
-                </label>
-                <label for="fancy-checkbox-default3" class="[ btn btn-default active ]">
-                <h8>Nom de la ville</h8>
-                </label>
-            </div>
-        </div><!-- checkbox -->
-        <div class="[ form-group ]"><!-- checkbox -->
-            <input type="checkbox" name="fancy-checkbox-default4" id="fancy-checkbox-default4" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-default4" class="[ btn btn-default ]">
-                    <span class="[ glyphicon glyphicon-ok ]"></span>
-                    <span> </span>
-                </label>
-                <label for="fancy-checkbox-default4" class="[ btn btn-default active ]">
-                <h8>Nom de la ville</h8>
-                </label>
-            </div>
-        </div><!-- checkbox -->
-        <div class="[ form-group ]"><!-- checkbox -->
-            <input type="checkbox" name="fancy-checkbox-default5" id="fancy-checkbox-default5" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-default5" class="[ btn btn-default ]">
-                    <span class="[ glyphicon glyphicon-ok ]"></span>
-                    <span> </span>
-                </label>
-                <label for="fancy-checkbox-default5" class="[ btn btn-default active ]">
-                    <h8>Nom de la ville</h8>
-                </label>
-            </div>
-        </div><!-- checkbox -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Valider</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+      <div class="dropdown open">
+  <button class="btn btn-secondary dropdown-toggle"
+          type="button" id="dropdownMenu3" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
 
-
-      <div class="col-sm-9 text-center text-left result"> 
-      
-    </div>
-    </div>
+                        </button>
+                        <div class="dropdown-menu">
+                            <h6 class="dropdown-header">Dropdown header</h6>
+                            <a class="dropdown-item" href="#!">Action</a>
+                            <a class="dropdown-item" href="#!">Another action</a>
+                        </div>
+                    </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                                        <br><br>
+                 <div class="col-12 pt-3 titreresult">
+                  <h2>
+                      <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>kikouuu</h2>
+                  <h6 class="hidden-sm-down"></h6>
+                </div>
+                  <!-- colone resultats -->
+                  <div class="col-12 pt-3 mt-1 resultrecherche">
+                  <h2>
+                      <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>  </h2>
+                  <h6 class="hidden-sm-down"></h6>
+                </div>
+                </div>  
+            </div>
+        </div>
+     </div>
   </div>
- 
+  
+</main>
 
-<footer class="container-fluid text-center">
-  <p>Footer</p>
-</footer>
+<!-- FOOTER -->
+    <footer>
+      <div class="container-fluid"> 
+        <div class="row "> 
+          <div class="col-sm-12 "> 
+          </div>
+        </div>
+        </div>    
+        <p>Footer</p>
+    </footer>
 
 </body>
 </html>
+
+
+
+
+
+ 
