@@ -2,14 +2,11 @@ $(function () {
     $('.selectpicker').selectpicker();
 });
 
-$('#empid').on('click',function() {
-    alert($(this).val());
-    console.log($(this).val());
-  });
 
-  console.log("potato");
 
- $(function() {
+
+//allow click on selectpicker menu
+$(function() {
     // ------------------------------------------------------- //
     // Multi Level dropdowns
     // ------------------------------------------------------ //
@@ -29,6 +26,52 @@ $('#empid').on('click',function() {
   
     });
   }); 
+
+
+
+
+
+  $(document).ready(function() {
+    $("#but").click(function(){
+        let villes = [];
+        $.each($(".selectpicker option:selected"), function(){            
+            villes.push($(this).val());
+        });
+        //console.log("ville selectione - " + villes.join(", "));
+
+        console.log(villes);
+
+        
+
+
+        
+        let arrayjs= JSON.stringify(villes);
+        console.log(arrayjs);
+
+
+        $.ajax({
+            type: "POST",
+                url: "getdata.php",
+                data: {content : arrayjs},
+                dataType: "text",
+                success: function(html){
+                alert( "Submitted");
+                    }
+          }); 
+    });
+});
+
+
+//unchecks all data from picker
+//visually it remains seelcted
+$(document).ready(function() {
+    $("#but2").click(function(){
+        $('.selectpicker option').prop("selected", false).trigger('change');
+    });
+   });
+
+
+
 
 
 

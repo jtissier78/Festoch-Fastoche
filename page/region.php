@@ -30,13 +30,14 @@ foreach($stmt->fetchAll() as $k=>$v) {
 
 
 
- $stmt = $conn->prepare("SELECT * FROM commune");
+$stmt = $conn->prepare("SELECT * FROM commune");
 $stmt->execute();
 
 $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 foreach($stmt->fetchAll() as $k=>$v) {
         $com_nom[$k] =$v['nom'];
         $id_dep_dep[$k] = $v['id_Departement'];
+        $id_ville[$k] = $v['id'];
 } 
 
 
@@ -78,7 +79,7 @@ foreach($stmt->fetchAll() as $k=>$v) {
                                   foreach($com_nom as $z=> $nom){
                                     
                                       if($id_dep[$y]==$id_dep_dep[$z]){
-                                        echo      "<option value=$id_dep_dep[$z]>$nom</option>";
+                                        echo      "<option value='$id_ville[$z]'>$nom</option>";
 
                                       }
                                       
@@ -86,8 +87,6 @@ foreach($stmt->fetchAll() as $k=>$v) {
                                   echo  "</select>";
  
                                  // End
-
-                          
                   echo "</ul>";
                   echo "</li>";
                   
@@ -95,20 +94,8 @@ foreach($stmt->fetchAll() as $k=>$v) {
                }
              }
 
-
-
-
       echo "</li>";
              
-      
-/*       echo      "<li class='dropdown-submenu'><a class='dropdown-item' href='#'>another level</a>";
-        echo        "<ul class='dropdown-menu'>";
-      echo            "<li class='dropdown-item'><a href='#'>4th level</a></li>";
-      echo            "<li class='dropdown-item'><a href='#'>4th level</a></li>";
-      echo            "<li class='dropdown-item'><a href='#'>4th level</a></li>";
-        echo        "</ul>";
-       echo      "</li>"; */
-      
       /* echo  "</ul>"; */
       echo "</li>"; 
       echo "</ul>";
@@ -117,26 +104,6 @@ foreach($stmt->fetchAll() as $k=>$v) {
       }
       echo "</ul>";
 
-
-
-
-
-
-/*       foreach($com_nom as $z=> $c){
-        if($id_dep[$k]==$id_dep_dep[$k]){
-        echo  "<label class='text-white mb-3 lead'>Where do you live?</label>";
-          //Multiselect dropdown 
-        echo  "<select multiple data-style='bg-white rounded-pill px-4 py-3 shadow-sm ' class='selectpicker w-100'>";
-        echo      "<option>United Kingdom</option>";
-        echo      "<option>United States</option>";
-        echo      "<option>France</option>";
-        echo      "<option>Germany</option>";
-        echo      "<option>Italy</option>";
-        echo  "</select>"; // End
-
-        }
-
-    } */
 ?>
 
 <!--   <a  class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
