@@ -12,7 +12,7 @@
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 
-
+<?php session_start(); ?>
 
 
 </head>
@@ -34,7 +34,7 @@
 </div>
 </header>
 
-<main>
+<main id="main">
  
 
 
@@ -98,15 +98,15 @@
               Region
             </button>
             
-            
+              <!-- modal content -->
               <?php include("page/region.php"); ?>
 
         </div>
 
         <div class="modal-footer">
-        <button id="but" type="button" class="btn btn-primary">Save </button>
-        <button id="but2" type="button" class="btn btn-primary">Reset </button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button id="but" type="button" class="btn btn-primary">Save </button> <!-- Saves data searched -->
+        <button id="but2" type="button" class="btn btn-primary">Reset </button> <!-- resets data searched -->
+        <button id="but3" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <!-- close modal -->
 
       </div>
       </div>
@@ -135,7 +135,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   
+  crossorigin="anonymous"></script>  <!-- ajax script lib -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
@@ -149,36 +153,14 @@
   <script src="js/vendor/bootstrap-select.min.js" async></script>
   <script src="js/modal_menu.js" async></script>
 
+<?php 
 
+//saves values of search to use them on getdata.php
+if(isset($_POST['content'])){
+  $_SESSION["search"]=$_POST['content'];
+  }?>
 
 </body>
-
-
-  <!-- <div class="form-group">
-  <select class="selectpicker" multiple>
-  <option>Mustard</option>
-  <option>Ketchup</option>
-  <option>Barbecue</option>
-</select>
-
-  </div> -->
-
-
-        <!-- start -->
-<!--         <div class="container">
-    <nav class="nav flex-column col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-        
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle backgroundnav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-        Region
-            </a>
-            <div class="dropdown-menu dropdown-menu-side" aria-labelledby="Preview">
-                <a class="dropdown-item" href="#">Mobile Phone</a>
-                <a class="dropdown-item" href="#">Tablet</a>
-                <a class="dropdown-item" href="#">Laptop</a>
-                <a class="dropdown-item" href="#">Desktop</a>
-            </div>
-        </li> -->
 
 
 </html>

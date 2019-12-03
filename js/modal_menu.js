@@ -1,3 +1,8 @@
+//get main id
+let container= document.getElementById('main_cont');
+
+
+//selects elements on menu
 $(function () {
     $('.selectpicker').selectpicker();
 });
@@ -30,8 +35,8 @@ $(function() {
 
 
 
-
-  $(document).ready(function() {
+//event click to get the values selected by the selectpicker
+  $(document).ready(function() {  
     $("#but").click(function(){
         let villes = [];
         $.each($(".selectpicker option:selected"), function(){            
@@ -42,28 +47,30 @@ $(function() {
         console.log(villes);
 
         
-
-
-        
+        //transforms array villes into a string
         let arrayjs= JSON.stringify(villes);
         console.log(arrayjs);
 
-
+        
+        //sends the string of ids to the index
         $.ajax({
             type: "POST",
-                url: "getdata.php",
+                url: "index.php",
                 data: {content : arrayjs},
                 dataType: "text",
                 success: function(html){
                 alert( "Submitted");
                     }
           }); 
+
+          
+        
     });
 });
 
 
 //unchecks all data from picker
-//visually it remains seelcted
+//visually it remains selected
 $(document).ready(function() {
     $("#but2").click(function(){
         $('.selectpicker option').prop("selected", false).trigger('change');
@@ -72,6 +79,13 @@ $(document).ready(function() {
 
 
 
+   $(document).ready(function() {  
+    $("#but3").click(function(){
+        $('#main').load('page/getdata.php');
+
+
+    });
+});
 
 
 
