@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"media="screen"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <!-- Stylesheet of calendar -->
@@ -30,11 +30,9 @@
 <body>
 
 <main>   
-
-  <div class="contener-fluid col-sm-12 mb-4 "> 
-      <div class="row main mr-1 ml-1">
+  <div class="contener-fluid col-sm-12 mb-4 main"> 
+      <div class="row mr-1 ml-1">
         <!-- HEADER -->
-    
         <div class= "container-fluid mt-4 mb-4 header">
         <div class="row">
             <div class="col-sm-12 ">
@@ -42,7 +40,6 @@
             </div>
         </div>
         </div> 
-
             <!-- navbar -->
           <div class="container-fluid sidenav">
             <div class="row main">

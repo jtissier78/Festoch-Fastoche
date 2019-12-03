@@ -1,4 +1,7 @@
+html { 
 
+  height:100%;
+}
 
 .header {
     background-color: #B1B1B1;
@@ -29,15 +32,17 @@
 
 .sidenav 
 {
+  
   border-radius: 5px;
 /*   margin:1em; */
   background-color: #ECECEC;
 /*   height: 45em; */
 }
  .centrale
-{  
-  min-height: 500px;
-  max-height: 600px;
+{ 
+  height:100%; 
+  padding: 1rem;
+
   border-radius: 5px;
   margin:1em;
   /* padding: 1em; */
@@ -75,8 +80,7 @@ background-color: rgb(255, 255, 255);
 
 div.main
 {
-  box-sizing: content-box;
-  border-radius: 5px;
+ border-radius: 5px;
 }
 
 footer {
@@ -86,5 +90,16 @@ footer {
   border-radius: 5px; 
 }
 
+
+@media (max-width: 1024px) {
+  /* CSS appliqué aux petits écrans */
+  .sidenav  {
+     float: none;
+     width: auto;
+  }
+  .main {
+     margin-right: 0px;
+  }
+}
 
 
