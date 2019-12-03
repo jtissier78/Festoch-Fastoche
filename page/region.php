@@ -2,12 +2,12 @@
 
 require "DataBaseConnect/Classes/Connexion.php";
 
-
+//innitiates connexion to server
 $new_pdo = new Connexion();
 
 $conn= $new_pdo->PDOInit();
 
-
+//select info from regions
 $stmt = $conn->prepare("SELECT * FROM regions");
 $stmt->execute();
 
@@ -17,7 +17,7 @@ foreach($stmt->fetchAll() as $k=>$v) {
         $id_region[$k] = $v['id'];
 }
 
-
+//select info from departments
 $stmt = $conn->prepare("SELECT * FROM departements");
 $stmt->execute();
 
@@ -29,7 +29,7 @@ foreach($stmt->fetchAll() as $k=>$v) {
 }
 
 
-
+//select info from commune
 $stmt = $conn->prepare("SELECT * FROM commune");
 $stmt->execute();
 
@@ -47,8 +47,9 @@ foreach($stmt->fetchAll() as $k=>$v) {
 
 ?>
 
-<!-- <li class="dropdown-submenu"> -->
-<?php
+
+<?php //lodal isual content display
+
       echo  "<ul class='dropdown-menu multi-level' role='menu' aria-labelledby='dropdownMenu'>";
       
       foreach ($region as $k=>$v){
