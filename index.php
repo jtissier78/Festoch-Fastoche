@@ -72,7 +72,7 @@
         </div>
     </header>
 
-
+    </main>
 <div class="container">
 
 
@@ -122,7 +122,7 @@
 
 
 
-</main>
+
 
 <footer>
   <div class="col-sm-12 text-center">
@@ -158,7 +158,15 @@
 //saves values of search to use them on getdata.php
 if(isset($_POST['content'])){
   $_SESSION["search"]=$_POST['content'];
-  }?>
+  }
+  
+  if(isset($_POST['global'])){
+    $_SESSION["global"]=$_POST['global'];
+    }
+  
+  ?>
+
+  
 
 </body>
 

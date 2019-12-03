@@ -56,7 +56,7 @@ foreach($stmt->fetchAll() as $k=>$v) {
 
       echo  "<li class='dropdown-submenu style:'height:-20px;'>";
         
-      echo  "<a  class='dropdown-item' tabindex='-1' href='#'>$v</a><br>";
+      echo  "<a value='$id_region[$k]' class='dropdown-item' tabindex='-1' href='#'>$v</a><br>";
       echo  "<ul class='dropdown-menu'>";
 
 

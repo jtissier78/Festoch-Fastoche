@@ -2,6 +2,7 @@
 let container= document.getElementById('main_cont');
 
 
+
 //selects elements on menu
 $(function () {
     $('.selectpicker').selectpicker();
@@ -58,12 +59,13 @@ $(function() {
                 url: "index.php",
                 data: {content : arrayjs},
                 dataType: "text",
-                success: function(html){
+/*                 success: function(html){
                 alert( "Submitted");
-                    }
+                    } */
           }); 
 
-          
+          document.getElementById('but3').click();
+          $('#main').load('page/getdata.php');
         
     });
 });
@@ -79,15 +81,31 @@ $(document).ready(function() {
 
 
 
-   $(document).ready(function() {  
-    $("#but3").click(function(){
-        $('#main').load('page/getdata.php');
 
 
-    });
-});
+/* $('#regionlist li').on('click', function(){
+    $('#datebox').val($(this).text());
+}); */
 
 
+$(".dropdown-menu li a").click(function(){
+    var selText = $(this).text();
 
 
-    //console.log("i work!!!");
+    console.log(selText);
+
+
+    $.ajax({
+        type: "POST",
+            url: "index.php",
+            data: {global : selText},
+            dataType: "text",
+            /* success: function(html){
+            alert( "Submitted");
+                } */
+      });
+
+      document.getElementById('but3').click();
+      $('#main').load('page/getglobal.php');
+
+  });
