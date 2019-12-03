@@ -53,10 +53,11 @@ foreach($stmt->fetchAll() as $k=>$v) {
       echo  "<ul class='dropdown-menu multi-level' role='menu' aria-labelledby='dropdownMenu'>";
       
       foreach ($region as $k=>$v){
-
+      if($k>5) //first five entrys are empty
+      {
       echo  "<li class='dropdown-submenu style:'height:-20px;'>";
         
-      echo  "<a value='$id_region[$k]' class='dropdown-item' tabindex='-1' href='#'>$v</a><br>";
+      echo  "<a class='dropdown-item' tabindex='-1' href='#'>$v</a><br>";
       echo  "<ul class='dropdown-menu'>";
 
 
@@ -103,8 +104,9 @@ foreach($stmt->fetchAll() as $k=>$v) {
       echo "</li>";
 
       }
+    }
       echo "</ul>";
-
+    
 ?>
 
 <!--   <a  class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
