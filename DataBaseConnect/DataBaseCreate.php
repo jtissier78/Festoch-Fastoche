@@ -11,31 +11,18 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Regions(
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Departements(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    num INTEGER,
+    num VARCHAR(10),
     nom TEXT,
-    id_Departement INTEGER,
-    FOREIGN KEY (id_Departement) REFERENCES Regions(id))");
+    id_Region INTEGER,
+    FOREIGN KEY (id_Region) REFERENCES Regions(id))");
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Commune(
     id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    CodePostal VARCHAR(20),
+    CodePostal VARCHAR(10),
+    CodeInsee VARCHAR(10),
     nom TEXT,
     id_Departement INTEGER,
     FOREIGN KEY (id_Departement) REFERENCES Departements(id))");
-
-/* $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Localite(
-    id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    CodeINSEE INTEGER,
-    nom TEXT,
-    id_Commune INTEGER,
-    FOREIGN KEY (id_Commune) REFERENCES Commune(id))"); */
-
-/* $dbh->sendRequest("CREATE TABLE IF NOT EXISTS GPS(
-    id INTEGER AUTO_INCREMENT PRIMARY KEY, 
-    Longitude FLOAT,
-    Latitude FLOAT,
-    id_Localite INTEGER,
-    FOREIGN KEY (id_Localite) REFERENCES Localite(id))"); */
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Categorie(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -48,8 +35,8 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Festival(
     noIdentif INTEGER,
     DateCreation DATE, # TODO Type Date
     Periodicite TEXT,
-    Longitude FLOAT,
-    Latitude FLOAT,
+    Longitude VARCHAR(100),
+    Latitude VARCHAR(100),
     id_Commune INTEGER,
     FOREIGN KEY (id_Commune) REFERENCES Commune(id))");
 
@@ -66,8 +53,6 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Edition(
     DateDebut DATE, # TODO Type Date
     DateFin DATE, # TODO Type Date
     id_Festival INTEGER,
-    id_GPS INTEGER,
-    FOREIGN KEY (id_GPS) REFERENCES GPS(id),
     FOREIGN KEY (id_Festival) REFERENCES Festival(id)
 )");
 
