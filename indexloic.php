@@ -22,9 +22,12 @@
   <!-- Script jquery -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  
   <!-- Script date rangepicker -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-
+  <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+          rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" ></script>
  
 </head>
 
@@ -50,12 +53,7 @@
                             <a class="nav-link text-truncate" href="#"><i class="fa fa-home"></i> <span class="d-none d-sm-inline">Overview</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i> <span class="d-none d-sm-inline"><!-- Search form -->
-                            <form class="form-inline active-cyan-4">
-                            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                                aria-label="Search">
-                            <i class="fas fa-search" aria-hidden="true"></i>
-                            </form></span></a>
+                            <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i>
                             <div class="collapse" id="submenu1" aria-expanded="false">
                                 <ul class="flex-column pl-2 nav">
                                     <li class="nav-item"><a class="nav-link py-0" href="#"><span>Orders</span></a></li>
@@ -74,7 +72,7 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-bar-chart"></i> Charts </a>  <script src="js/datePicker.js"></script> <img id="datepicker" src="http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" alt="Date" > 
+                                                        <i class="fa fa-fw fa-bar-chart"></i> Charts </a>
 
                                                 </li>
                                                 <li class="nav-item">
@@ -87,7 +85,20 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">Analytics</span></a></li>
+                        <input type="text" id="datePicker">
+                            <script>
+                                $(document).ready(function() {
+
+                                    $(function() {
+                                        $( "#datePicker" ).datepicker();
+                                    });
+                                })
+                            </script>
+
+                         <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline"> 
+
+
+                        </span></a></li>
                         <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Export</span></a></li>
                     </ul>
                 </div>
@@ -118,9 +129,7 @@
 
                                   </button>
                                   <div class="dropdown-menu">
-                                      <h6 class="dropdown-header">Dropdown header</h6><!--     <script type="text/javascript" src="js/datePicker.js"></script>
-                                                        <script src="js/datePicker.js"></script> -->
-                                                        <script type="text/javascript" language="Javascript" src="js/datePicker.js"></script>
+                                      <h6 class="dropdown-header">Dropdown header</h6>
                                       <a class="dropdown-item" href="#!">Action</a>
                                       <a class="dropdown-item" href="#!">Another action</a>
                                   </div>
