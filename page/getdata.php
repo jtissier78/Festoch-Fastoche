@@ -71,6 +71,9 @@ foreach($result as $k=> $res){
             }while($exit==false);
             echo "</ul>";
         }
+        else{
+            echo "Il n'y a pas de festivals ici!!";
+        }
     }
 
     echo "</div>";

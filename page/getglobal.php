@@ -26,11 +26,11 @@ $stmt = $conn->prepare("SELECT * FROM regions where nom= '$data'");
             $regions_id = $v['id'];
         }
 
-        if($regions_id>0 && $regions_id<5){
+/*         if($regions_id>0 && $regions_id<5){
             echo "<h1>Il n'y a pas de festivals ici!!<br></h1>";
         }
 
-else{
+else{ */
         //var_dump($regions_id);
     if(isset($regions)){ //if user clicked in a region
 
@@ -57,71 +57,79 @@ else{
             }
         }
 
-
-
-
-        $max=sizeof($com_id);
-                
-        //select festival data
-        foreach($com_id as $k=> $id){
-                $stmt = $conn->prepare("SELECT * FROM festival where id_commune=$id");
-                $stmt->execute();
-
-                $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                foreach($stmt->fetchAll() as $n=>$v) {
-                        $festival_id[$k][$n] =$v['id'];
-                        $festival_nom[$k][$n] =$v['nom'];
-                        $festival_url[$k][$n] =$v['url'];
-                        $festival_num[$k][$n] =$v['numIdentif'];
-                        $festival_dateC[$k][$n] =$v['DateCreation'];
-                        $festival_periodicite[$k][$n] =$v['Periodicite'];
-                        $festival_longitude[$k][$n] =$v['Longitude'];
-                        $festival_latitude[$k][$n] =$v['Latitude'];
+            if(isset($com_id))
+            {
+                $max=sizeof($com_id);
                         
+                //select festival data
+                foreach($com_id as $k=> $id){
+                        $stmt = $conn->prepare("SELECT * FROM festival where id_commune=$id");
+                        $stmt->execute();
+
+                        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                        foreach($stmt->fetchAll() as $n=>$v) {
+                                $festival_id[$k][$n] =$v['id'];
+                                $festival_nom[$k][$n] =$v['nom'];
+                                $festival_url[$k][$n] =$v['url'];
+                                $festival_num[$k][$n] =$v['numIdentif'];
+                                $festival_dateC[$k][$n] =$v['DateCreation'];
+                                $festival_periodicite[$k][$n] =$v['Periodicite'];
+                                $festival_longitude[$k][$n] =$v['Longitude'];
+                                $festival_latitude[$k][$n] =$v['Latitude'];
+                                
+                                
+                        }
+                    }
+
+                    //var_dump($festival_latitude);
+
+                    echo "<div class='container'>";
+                    echo "<div class='row'>";
                         
-                }
-            }
-
-            //var_dump($festival_latitude);
-
-            echo "<div class='container'>";
-            echo "<div class='row'>";
-                
-            for($i=0;$i<$max;$i++){   //display all data for each single festival
-                if(isset($festival_nom[$i][0]))
-                {
-                    echo "<ul>";
-                    $exit=false;
-                    $j=0;
-                    do{
-                        if(isset($festival_nom[$i][$j]))
+                    for($i=0;$i<$max;$i++){   //display all data for each single festival
+                        if(isset($festival_nom[$i][0]))
                         {
-                        echo "<li>"; 
-                        echo "Nom: ".$festival_nom[$i][$j]."<br>";
-                            if(isset($festival_url[$i][$j])) {echo "Web Site: ".$festival_url[$i][$j]."<br>";}
-                            if(isset($festival_num[$i][$j])) {echo "Identifiant: ".$festival_num[$i][$j]."<br>";}
-                            if(isset($festival_dateC[$i][$j]))  {echo "Date Creation: ".$festival_dateC[$i][$j]."<br>";}
-                            if(isset($festival_periodicite[$i][$j])) {echo "Periodicite: ".$festival_periodicite[$i][$j]."<br>";}
-                            if(isset($festival_longitude[$i][$j])) {echo "Longitude: ".$festival_longitude[$i][$j]."<br>";}
-                            if(isset($festival_latitude[$i][$j])) {echo "Latitude: ".$festival_latitude[$i][$j]."<br>";}
-                            echo "<br><br><br>";
+                            echo "<ul>";
+                            $exit=false;
+                            $j=0;
+                            do{
+                                if(isset($festival_nom[$i][$j]))
+                                {
+                                echo "<li>"; 
+                                echo "Nom: ".$festival_nom[$i][$j]."<br>";
+                                    if(isset($festival_url[$i][$j])) {echo "Web Site: ".$festival_url[$i][$j]."<br>";}
+                                    if(isset($festival_num[$i][$j])) {echo "Identifiant: ".$festival_num[$i][$j]."<br>";}
+                                    if(isset($festival_dateC[$i][$j]))  {echo "Date Creation: ".$festival_dateC[$i][$j]."<br>";}
+                                    if(isset($festival_periodicite[$i][$j])) {echo "Periodicite: ".$festival_periodicite[$i][$j]."<br>";}
+                                    if(isset($festival_longitude[$i][$j])) {echo "Longitude: ".$festival_longitude[$i][$j]."<br>";}
+                                    if(isset($festival_latitude[$i][$j])) {echo "Latitude: ".$festival_latitude[$i][$j]."<br>";}
+                                    echo "<br><br><br>";
 
-                        echo "</li>";
-                        $j++;
+                                echo "</li>";
+                                $j++;
+                                }
+                                else{
+                                    $exit= true;
+                                }
+                                
+                            }while($exit==false);
+                            echo "</ul>";
                         }
                         else{
-                            $exit= true;
+                            echo "Il n'y a pas de festivals avec ce nom!!";
                         }
-                        
-                    }while($exit==false);
-                    echo "</ul>";
-                }
-            }
+                    }
 
-            echo "</div>";
-            echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
         
-    }
+            }
+            else{
+                echo "<h1>Il n'y a pas de festivals ici!!<br></h1>";
+            }
+    
+        }
+
 
 
 
@@ -207,11 +215,14 @@ else{
                 }while($exit==false);
                 echo "</ul>";
             }
+            else{
+                echo "Il n'y a pas de festivals ici!!";
+            }
         }
 
         echo "</div>";
         echo "</div>";
     }
 
-}
+//}
 ?>
