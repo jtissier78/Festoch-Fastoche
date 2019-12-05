@@ -26,7 +26,7 @@ $stmt = $conn->prepare("SELECT * FROM regions where nom= '$data'");
             $regions_id = $v['id'];
         }
 
-        if($regions_id>0 && $regions_id<=5){
+        if($regions_id>0 && $regions_id<5){
             echo "<h1>Il n'y a pas de festivals ici!!<br></h1>";
         }
 
