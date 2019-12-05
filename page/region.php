@@ -77,7 +77,7 @@ foreach($stmt->fetchAll() as $k=>$v) {
                             echo  "<label class='text-white mb-3 lead'>La Ville?</label>";
                   //Multiselect dropdown 
 
-                            echo  "<select multiple data-style='bg-white rounded-pill px-4 py-3 shadow-sm ' class='selectpicker w-18'>";
+                            echo  "<select multiple data-style='bg-white rounded-pill px-4 py-3 shadow-sm ' class='selectpicker w-18' id='picker1'>";
                                   foreach($com_nom as $z=> $nom){
                                     
                                       if($id_dep[$y]==$id_dep_dep[$z]){

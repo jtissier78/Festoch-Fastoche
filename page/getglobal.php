@@ -125,7 +125,7 @@ else{ */
         
             }
             else{
-                echo "<h1>Il n'y a pas de festivals ici!!<br></h1>";
+                echo "Il n'y a pas de festivals a $com_nom[$i]!!";
             }
     
         }
@@ -154,6 +154,7 @@ else{ */
 
             foreach($stmt->fetchAll() as $k=> $v) {
                 $com_id[$k]= $v['id'];
+                $com_nom[$k]=$v['nom'];
                 
             }
         
@@ -216,7 +217,7 @@ else{ */
                 echo "</ul>";
             }
             else{
-                echo "Il n'y a pas de festivals ici!!";
+                echo "Il n'y a pas de festivals a $com_nom[$i]!!";
             }
         }
 

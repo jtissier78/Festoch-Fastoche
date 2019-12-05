@@ -4,6 +4,11 @@ session_start();
 
 require "../DataBaseConnect/Classes/Connexion.php";
 
+
+if(isset($_SESSION["search"])== true && isset($_SESSION["cate"])==false){
+
+
+
 $result= [];
 //transforms ajax string into an array
 $result = json_decode(stripslashes($_SESSION["search"]));
@@ -78,5 +83,11 @@ foreach($result as $k=> $res){
 
     echo "</div>";
     echo "</div>";
+
+}
+
+else if(isset($_SESSION["search"])== true && isset($_SESSION["cate"])==false){
+    
+}
 
 ?>

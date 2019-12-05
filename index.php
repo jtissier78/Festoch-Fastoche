@@ -34,6 +34,60 @@
 </div>
 </header>
 
+<div class="container">
+
+
+
+
+  <div class="modal_menu">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal">Recherche</button>
+
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+
+
+    <div class="container">
+  	  <div class="row">
+        <h5>Choisissez votre recherche</h5>
+        
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Region
+            </button>
+            
+              <!-- modal content -->
+              <?php include("page/region.php"); ?>
+
+        </div>
+
+        <div class="modal-footer">
+        <button id="but" type="button" class="btn btn-primary">Save </button> <!-- Saves data searched -->
+        <button id="but2" type="button" class="btn btn-primary">Reset </button> <!-- resets data searched -->
+        <button id="but3" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <!-- close modal -->
+
+      </div>
+      </div>
+    </div>
+<!-- end -->
+          
+        </div>
+      </div>
+  </div> 
+</div>
+
+
+<!-- button categorie -->
+<div class="categorie">
+  <?php include("page/categorie.php") ?>
+
+
+    </div>
+
+    
+
 <main id="main">
  
 
@@ -73,50 +127,12 @@
     </header>
 
     </main>
-<div class="container">
-
-
-
-
-  <div class="modal_menu">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal">Recherche</button>
-
-    <div class="modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
 
 
 
 
 
-    <div class="container">
-  	  <div class="row">
-        <h5>Choisissez votre recherche</h5>
-        
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Region
-            </button>
-            
-              <!-- modal content -->
-              <?php include("page/region.php"); ?>
 
-        </div>
-
-        <div class="modal-footer">
-        <button id="but" type="button" class="btn btn-primary">Save </button> <!-- Saves data searched -->
-        <button id="but2" type="button" class="btn btn-primary">Reset </button> <!-- resets data searched -->
-        <button id="but3" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> <!-- close modal -->
-
-      </div>
-      </div>
-    </div>
-<!-- end -->
-          
-        </div>
-      </div>
-  </div> 
-</div>
 
 
 
@@ -152,6 +168,7 @@
   <!-- rui' script -->
   <script src="js/vendor/bootstrap-select.min.js" async></script>
   <script src="js/modal_menu.js" async></script>
+  <script src="js/categorie.js" async></script>
 
 <?php 
 
@@ -163,6 +180,10 @@ if(isset($_POST['content'])){
   if(isset($_POST['global'])){
     $_SESSION["global"]=$_POST['global'];
     }
+
+  if(isset($_POST['cate'])) {
+    $_SESSION["cate"]=$_POST['cate'];
+  }
   
   ?>
 

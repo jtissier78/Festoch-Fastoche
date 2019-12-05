@@ -40,7 +40,7 @@ $(function() {
   $(document).ready(function() {  
     $("#but").click(function(){
         let villes = [];
-        $.each($(".selectpicker option:selected"), function(){            
+        $.each($(".#picker1 option:selected"), function(){            
             villes.push($(this).val());
         });
         //console.log("ville selectione - " + villes.join(", "));
@@ -75,7 +75,7 @@ $(function() {
 //visually it remains selected
 $(document).ready(function() {
     $("#but2").click(function(){
-        $('.selectpicker option').prop("selected", false).trigger('change');
+        $('#picker1 option').prop("selected", false).trigger('change');
     });
    });
 
