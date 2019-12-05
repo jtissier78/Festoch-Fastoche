@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/style.css"media="screen"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  
   <!-- Stylesheet of calendar -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   
@@ -24,7 +25,7 @@
   <!-- Script date rangepicker -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
-  <script src="js/datePicker.js"></script> <!-- TODO Insert <img id="datepicker" src="http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" alt="Date" > where we want to use DatePicker. -->
+ 
 </head>
 
 <body>
@@ -69,10 +70,12 @@
                                                 <li class="nav-item">
                                                     <a class="nav-link p-1" href="#">
                                                         <i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
+
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-bar-chart"></i> Charts </a>
+                                                        <i class="fa fa-fw fa-bar-chart"></i> Charts </a>  <script src="js/datePicker.js"></script> <img id="datepicker" src="http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" alt="Date" > 
+
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link p-1" href="#">
@@ -115,7 +118,9 @@
 
                                   </button>
                                   <div class="dropdown-menu">
-                                      <h6 class="dropdown-header">Dropdown header</h6>
+                                      <h6 class="dropdown-header">Dropdown header</h6><!--     <script type="text/javascript" src="js/datePicker.js"></script>
+                                                        <script src="js/datePicker.js"></script> -->
+                                                        <script type="text/javascript" language="Javascript" src="js/datePicker.js"></script>
                                       <a class="dropdown-item" href="#!">Action</a>
                                       <a class="dropdown-item" href="#!">Another action</a>
                                   </div>
@@ -151,7 +156,7 @@
           <div class="col-sm-12 "> 
           </div>
         </div>
-        </div>    
+        </div>  <script></script>  
         <p>Footer</p>
     </footer>
             </div>
@@ -159,7 +164,9 @@
   
 </main>
 
-
+<script type="application/javascript" src="jquery-ui/js/jquery-1.9.1.js"></script>  
+<script type="application/javascript" src="jquery-ui/js/jquery-ui-1.10.3.custom.js"></script> 
+<script type="application/javascript" src="jquery-ui/js/jquery.ui.datepicker-fr.js"></script>
 </body>
 </html>
 
