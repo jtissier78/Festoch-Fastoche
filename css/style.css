@@ -1,0 +1,105 @@
+html { 
+
+  height:100%;
+}
+
+.header {
+    background-color: #B1B1B1;
+    color: white;
+    height:  6em;
+    border-radius: 5px;
+    padding: 1rem;
+    width:100%;
+   
+  }
+
+.logo
+{
+  border-radius: 5px;
+  background-color: #D9D9D9;
+  height: 4em;
+  margin:1em;
+  width: 4em;
+}
+
+.titreHeader
+{
+  border-radius: 5px;
+  background-color: #D9D9D9;
+  margin:1em;
+  height: 4em;
+}
+
+.sidenav 
+{
+  
+  border-radius: 5px;
+/*   margin:1em; */
+  background-color: #ECECEC;
+/*   height: 45em; */
+}
+ .centrale
+{ 
+  height:100%; 
+  padding: 1rem;
+
+  border-radius: 5px;
+  margin:1em;
+  /* padding: 1em; */
+  /* padding: 1em; */
+  /* height: 45em; */
+}
+
+.result
+{
+/*   margin:1em; */
+
+  border: 1rem solid white ;
+  border-right-style: none;
+  border-top-style: none;
+  border-bottom-style: none;
+  background-color: 5 #ECECEC; 
+  /* height: 45em;  */
+}
+
+.resultrecherche
+{
+min-height: 500px;
+border-radius: 5px;
+background-color: rgb(255, 255, 255);
+ /*  height: 40em;   */
+}
+
+.titreresult
+{
+  min-height: 10vh;
+  border-radius: 5px;
+  background-color:rgb(240, 236, 236); 
+  margin:1em;
+}
+
+div.main
+{
+ border-radius: 5px;
+}
+
+footer {
+  background-color: #B1B1B1;
+  color: white;
+  height:  6em;
+  border-radius: 5px; 
+}
+
+
+@media (max-width: 1024px) {
+  /* CSS appliqué aux petits écrans */
+  .sidenav  {
+     float: none;
+     width: auto;
+  }
+  .main {
+     margin-right: 0px;
+  }
+}
+
+

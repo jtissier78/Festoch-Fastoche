@@ -8,10 +8,9 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css"media="screen"/>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-  
   <!-- Stylesheet of calendar -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   
@@ -25,15 +24,21 @@
   <!-- Script date rangepicker -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
- 
+  <!-- <script src="js/datePicker.js"></script> --> <!-- TODO Insert <img id="datepicker" src="http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" alt="Date" > where we want to use DatePicker. -->
+  <script src="js/CalLoc.js"></script>   <!-- TODO a inserer pour utiliser script de geolocalisation et datepicker. 
+  ajouter id=datepicker sur l'element qui doit ouvrir le calendrier.
+  ajouter id=geoLoc sur l'element qui doit lancer la géolocalisation. pour l'instant réglé à 50 unite gps
+quand un selecteur de distance sera créé je modifierai le script pour prendre en compte cette distance. --> 
 </head>
 
 <body>
 
 <main>   
-  <div class="contener-fluid col-sm-12 mb-4 main"> 
-      <div class="row mr-1 ml-1">
+
+  <div class="contener-fluid col-sm-12 mb-4 "> 
+      <div class="row main mr-1 ml-1">
         <!-- HEADER -->
+    
         <div class= "container-fluid mt-4 mb-4 header">
         <div class="row">
             <div class="col-sm-12 ">
@@ -41,6 +46,7 @@
             </div>
         </div>
         </div> 
+
             <!-- navbar -->
           <div class="container-fluid sidenav">
             <div class="row main">
@@ -59,31 +65,8 @@
                             <div class="collapse" id="submenu1" aria-expanded="false">
                                 <ul class="flex-column pl-2 nav">
                                     <li class="nav-item"><a class="nav-link py-0" href="#"><span>Orders</span></a></li>
-                                    <li class="nav-item">
-                                        <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1"><span>Customers</span></a>
-                                        <div class="collapse" id="submenu1sub1" aria-expanded="false">
-                                            <ul class="flex-column nav pl-4">
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-clock-o"></i> Daily </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
-
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-bar-chart"></i> Charts </a>  <script src="js/datePicker.js"></script> <img id="datepicker" src="http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" alt="Date" > 
-
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-compass"></i> Areas </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                    <li class="nav-item" id="datepicker"><span> Date </span></li>
+                                    <li class="nav-item" id="geoLoc"><span>Me localiser</span></li>
                                 </ul>
                             </div>
                         </li>
@@ -92,7 +75,7 @@
                     </ul>
                 </div>
                 <!-- colone resultats -->
-                <div class="col-10 pt-2 text-center result ">
+                <div class="col-10 pt-2 text-center result " id="Result">
                   <h2><br>
                       <a href="" data-target="#sidebar" data-toggle="collapse" class="d-md-none"><i class="fa fa-bars"></i></a>Recherches par type et ville</h2>
                       <!-- Button trigger modal -->
@@ -118,9 +101,7 @@
 
                                   </button>
                                   <div class="dropdown-menu">
-                                      <h6 class="dropdown-header">Dropdown header</h6><!--     <script type="text/javascript" src="js/datePicker.js"></script>
-                                                        <script src="js/datePicker.js"></script> -->
-                                                        <script type="text/javascript" language="Javascript" src="js/datePicker.js"></script>
+                                      <h6 class="dropdown-header">Dropdown header</h6>
                                       <a class="dropdown-item" href="#!">Action</a>
                                       <a class="dropdown-item" href="#!">Another action</a>
                                   </div>
@@ -156,7 +137,7 @@
           <div class="col-sm-12 "> 
           </div>
         </div>
-        </div>  <script></script>  
+        </div>    
         <p>Footer</p>
     </footer>
             </div>
@@ -164,9 +145,7 @@
   
 </main>
 
-<script type="application/javascript" src="jquery-ui/js/jquery-1.9.1.js"></script>  
-<script type="application/javascript" src="jquery-ui/js/jquery-ui-1.10.3.custom.js"></script> 
-<script type="application/javascript" src="jquery-ui/js/jquery.ui.datepicker-fr.js"></script>
+
 </body>
 </html>
 
