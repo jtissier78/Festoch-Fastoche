@@ -46,7 +46,7 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Festival(
     nom TEXT,
     url TEXT,
     noIdentif INTEGER,
-    DateCreation TEXT, # TODO Type Date
+    DateCreation DATE, # TODO Type Date
     Periodicite TEXT,
     Longitude FLOAT,
     Latitude FLOAT,
@@ -63,8 +63,8 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS LienCatFest(
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Edition(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     No INTEGER,
-    DateDebut TEXT, # TODO Type Date
-    DateFin TEXT, # TODO Type Date
+    DateDebut DATE, # TODO Type Date
+    DateFin DATE, # TODO Type Date
     id_Festival INTEGER,
     id_GPS INTEGER,
     FOREIGN KEY (id_GPS) REFERENCES GPS(id),
