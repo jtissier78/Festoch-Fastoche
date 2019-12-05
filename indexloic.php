@@ -43,48 +43,28 @@
             <img class="img-fluid rounded" src="icons8.png">
             </div>
         </div>
-        </div> 
+        </div>
             <!-- navbar -->
-          <div class="container-fluid sidenav">
-            <div class="row main">
-                <div class="col-2 collapse show d-md-flex pt-2 pl-0 min-vh-100" id="sidebar">
-                    <ul class="nav flex-column flex-nowrap overflow-hidden">
-                        <li class="nav-item">
-                            <a class="nav-link text-truncate" href="#"><i class="fa fa-home"></i> <span class="d-none d-sm-inline">Overview</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i>
-                            <div class="collapse" id="submenu1" aria-expanded="false">
-                                <ul class="flex-column pl-2 nav">
-                                    <li class="nav-item"><a class="nav-link py-0" href="#"><span>Orders</span></a></li>
+                <div class="container-fluid sidenav">
+                    <div class="row main">
+                        <div class="col-2 collapse show d-md-flex pt-2 pl-0 min-vh-100" id="sidebar">
+                            <ul class="nav flex-column flex-nowrap overflow-hidden">
+                                <li class="nav-item">
+                                    <a class="nav-link text-truncate" href="#"><i class="fa fa-home"></i> <span class="d-none d-sm-inline">Overview</span></a></li>
                                     <li class="nav-item">
-                                        <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1"><span>Customers</span></a>
+                                        <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i>
+                                            <div class="collapse" id="submenu1" aria-expanded="false">
+                                            <ul class="flex-column pl-2 nav">
+                                            <li class="nav-item"><a class="nav-link py-0" href="#"><span>Orders</span></a></li>
+                                            <li class="nav-item">
+                                            <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1"><span>Customers</span></a>
                                         <div class="collapse" id="submenu1sub1" aria-expanded="false">
-                                            <ul class="flex-column nav pl-4">
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-clock-o"></i> Daily </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-dashboard"></i> Dashboard </a>
-
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-bar-chart"></i> Charts </a>
-
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link p-1" href="#">
-                                                        <i class="fa fa-fw fa-compass"></i> Areas </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
+                                 </div>
                             </div>
-                        </li>
+
+                        <!-- script pour afficher un clendrier "datepicker" -->
+
+                        <h4>Recherche par date:</h4>
                         <input type="text" id="datePicker">
                             <script>
                                 $(document).ready(function() {
@@ -93,14 +73,15 @@
                                         $( "#datePicker" ).datepicker();
                                     });
                                 })
-                            </script>
+                            </script><br>
 
-                         <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline"> 
+                         <!-- recherche par géolocalisation autorur de moi  -->
 
-
-                        </span></a></li>
-                        <li class="nav-item"><a class="nav-link text-truncate" href="#"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">Export</span></a></li>
-                    </ul>
+                        <h4>Autour de moi :</h4>
+                            <form action="/action_page.php">
+                            <input type="range" name="points" min="0" max="10">
+                                <input type="submit">
+                            </form>
                 </div>
                 <!-- colone resultats -->
                 <div class="col-10 pt-2 text-center result ">
