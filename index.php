@@ -162,8 +162,7 @@
 </div><!-- /.modal -->
 
 
-      <div class="col-sm-9 text-center text-left result"> 
-      
+    <div class="col-sm-9 text-center text-left result"> 
     </div>
     </div>
   </div>
@@ -171,6 +170,7 @@
 
 <footer class="container-fluid text-center">
   <p>Footer</p>
+  <img id="datepicker" src="http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" alt="Date" >
 </footer>
 
 </body>
