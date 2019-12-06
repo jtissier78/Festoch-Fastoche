@@ -352,7 +352,7 @@ try {
 		}
 	}
 
-
+}
 catch(exception $e) {
 	die('ERREUR : '.$e->getMessage());
 }
