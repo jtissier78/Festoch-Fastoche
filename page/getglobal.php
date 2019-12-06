@@ -125,7 +125,7 @@ else{ */
         
             }
             else{
-                echo "Il n'y a pas de festivals a $com_nom[$i]!!";
+                echo "Il n'y a pas de festivals ici!!";
             }
     
         }

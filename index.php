@@ -12,7 +12,7 @@
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
 
-<?php session_start(); ?>
+<?php session_start(); ?> <!-- session start, necessary for data treatment -->
 
 
 </head>
@@ -177,13 +177,13 @@ if(isset($_POST['content'])){
   $_SESSION["search"]=$_POST['content'];
   }
   
-  if(isset($_POST['global'])){
+   if(isset($_POST['global'])){
     $_SESSION["global"]=$_POST['global'];
     }
 
   if(isset($_POST['cate'])) {
     $_SESSION["cate"]=$_POST['cate'];
-  }
+  } 
   
   ?>
 

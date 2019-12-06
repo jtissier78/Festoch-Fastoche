@@ -5,7 +5,7 @@ session_start();
 require "../DataBaseConnect/Classes/Connexion.php";
 
 
-if(isset($_SESSION["search"])== true && isset($_SESSION["cate"])==false){
+if(isset($_SESSION["search"])== true){
 
 
 
@@ -15,6 +15,7 @@ $result = json_decode(stripslashes($_SESSION["search"]));
 
 $max=sizeof($result);
 //var_dump($result);
+
 //innitiates connexion to server
 $new_pdo = new Connexion();
 
@@ -44,6 +45,8 @@ foreach($result as $k=> $res){
 
     //var_dump($festival_latitude);
 
+
+    //display in screen of each festival
     echo "<div class='container'>";
     echo "<div class='row'>";
         
@@ -80,11 +83,11 @@ foreach($result as $k=> $res){
             echo "Il n'y a pas de festivals ici!!";
         }
     }
-
     echo "</div>";
     echo "</div>";
-
 }
+
+
 
 else if(isset($_SESSION["search"])== true && isset($_SESSION["cate"])==false){
     

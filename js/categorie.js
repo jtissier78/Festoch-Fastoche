@@ -27,6 +27,7 @@ $(document).ready(function() {
                     } */
           }); 
 
+          $('#main').load('page/getcat.php');
           
         
     });
