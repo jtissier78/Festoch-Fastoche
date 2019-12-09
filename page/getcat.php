@@ -9,8 +9,8 @@
 
     $data= [];
 
-
-    if(isset($_SESSION["cate"])){
+    //var_dump($_POST);
+        if(isset($_SESSION["cate"])){
 
    
     

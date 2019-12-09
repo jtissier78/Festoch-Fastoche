@@ -2,13 +2,10 @@
 let container= document.getElementById('main_cont');
 
 
-
 //selects elements on menu
 $(function () {
     $('.selectpicker').selectpicker();
 });
-
-
 
 
 //allow click on selectpicker menu
@@ -32,8 +29,6 @@ $(function() {
   
     });
   }); 
-
-
 
 
 //event click to get the values selected by the selectpicker
@@ -75,12 +70,9 @@ $(function() {
 //visually it remains selected
 $(document).ready(function() {
     $("#but2").click(function(){
-        $('selectpicker option').prop("selected", false).trigger('change');
+        $('.selectpicker option').prop("selected", false).trigger('change');
     });
    });
-
-
-
 
 
 /* $('#regionlist li').on('click', function(){

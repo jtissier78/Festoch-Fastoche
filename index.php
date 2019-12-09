@@ -180,10 +180,9 @@ if(isset($_POST['content'])){
    if(isset($_POST['global'])){
     $_SESSION["global"]=$_POST['global'];
     }
-
-  if(isset($_POST['cate'])) {
+ if(isset($_POST['cate'])) {
     $_SESSION["cate"]=$_POST['cate'];
-  } 
+  }  
   
   ?>
 
