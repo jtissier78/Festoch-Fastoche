@@ -1,0 +1,16 @@
+{
+   
+    "root":{
+        "serveur":"localhost",
+        "dbName":"Festoche-Fastoche",
+        "id":"root",
+        "password":"+GvGcjg^"
+    },
+
+    "MasterUser":{
+        "serveur":"localhost",
+        "dbName":"Festoche-Fastoche",
+        "id":"CQCB",
+        "password":"CQCB"
+    }
+}
