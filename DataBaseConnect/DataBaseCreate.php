@@ -32,7 +32,7 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Festival(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     nom TEXT,
     url TEXT,
-    noIdentif INTEGER,
+    numIdentif VARCHAR(100),
     DateCreation DATE, # TODO Type Date
     Periodicite TEXT,
     Longitude VARCHAR(100),
@@ -49,7 +49,7 @@ $dbh->sendRequest("CREATE TABLE IF NOT EXISTS LienCatFest(
 
 $dbh->sendRequest("CREATE TABLE IF NOT EXISTS Edition(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    No INTEGER,
+    Annee INTEGER,
     DateDebut DATE, # TODO Type Date
     DateFin DATE, # TODO Type Date
     id_Festival INTEGER,

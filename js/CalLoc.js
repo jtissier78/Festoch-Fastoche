@@ -36,11 +36,11 @@ $(function() {
         if (data=="Success") {
           
           
-          $("#Result").load('page/GeoLocaliseResult.php');
+          $("#resultrecherche").load('page/GeoLocaliseResult.php');
           console.log(picker.startDate.format('YYYY-MM-DD'));
           console.log(picker.endDate.format('YYYY-MM-DD'));
         } else {
-          $("#Result").html("Erreur dans la correction de votre questionnaire.");
+          $("#resultrecherche").html("Erreur dans la correction de votre questionnaire.");
         }
       }
     );
@@ -77,11 +77,11 @@ function showLocation(position){
     },
     function (data) {
       if (data=='Success') {
-        $("#Result").load('page/GeoLocaliseResult.php');
+        $("#resultrecherche").load('page/GeoLocaliseResult.php');
         
                                                                       
       } else{
-        $("#Result").html("Erreur dans la correction de votre questionnaire.");
+        $("#resultrecherche").html("Erreur dans la correction de votre questionnaire.");
       }
     }
   );
