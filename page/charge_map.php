@@ -44,7 +44,7 @@
 /*             var lat = 48.852969;
             var lon = 2.349903; */
             var macarte = null;
-            let coord = <?php echo json_encode($coord); ?>;
+            var coord = <?php echo json_encode($coord)?>;
             var lat = coord[0];
             var lon = coord[1];
 

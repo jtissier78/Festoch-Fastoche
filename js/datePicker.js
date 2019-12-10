@@ -1,4 +1,6 @@
-/* $(function() {
+$(function() {
+  
+
 
     $('#datepicker').daterangepicker({
       linkedCalendars:false,
@@ -25,4 +27,4 @@
       }
     });
     
-  }); */
+  });
