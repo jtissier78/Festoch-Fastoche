@@ -4,9 +4,12 @@ session_start();
 
 require "../DataBaseConnect/Classes/Connexion.php";
 
+//innitiates connexion to server
+$new_pdo = new Connexion();
 
+$conn= $new_pdo->PDOInit();
 
-if(isset($_SESSION["search"])== true && isset($_SESSION["cate"])==true){
+if(isset($_SESSION["search"])== true && isset($_SESSION["cate"])==true && strlen($_SESSION["cate"])>2){
 
 
 
@@ -21,10 +24,7 @@ $data = json_decode(stripslashes($_SESSION["cate"]));
 $max=sizeof($result);
 //var_dump($data);
 
-//innitiates connexion to server
-$new_pdo = new Connexion();
 
-$conn= $new_pdo->PDOInit();
 
 
     //select the categorie name
@@ -97,9 +97,11 @@ foreach($result as $k=> $res){
                 {
                 
                     foreach($festList as $fest){
-                        if($fest == $festival_id[$i][$j]){
+                        if($fest == $festival_id[$i][$j] && strlen($nom_cat[$i])>0){
 
                             echo "<li>";
+                            
+
                             echo $nom_cat[$i]."<br>";
                             echo "Nom: ".$festival_nom[$i][$j]."<br>";
                             if(isset($festival_url[$i][$j])) {echo "Web Site: ".$festival_url[$i][$j]."<br>";}
@@ -110,6 +112,7 @@ foreach($result as $k=> $res){
                             if(isset($festival_latitude[$i][$j])) {echo "Latitude: ".$festival_latitude[$i][$j]."<br>";}
                             echo "</li>";
                             echo "<br><br><br>";
+                            
 
                         }
                     }
@@ -137,7 +140,7 @@ foreach($result as $k=> $res){
 
 
 
-else if(isset($_SESSION["search"])== true && isset($_SESSION["cate"])==false){
+else /* if(isset($_SESSION["search"])== true && isset($_SESSION["cate"])==false) */{
     
 $result= [];
 //transforms ajax string into an array
@@ -146,14 +149,7 @@ $result = json_decode(stripslashes($_SESSION["search"]));
 $max=sizeof($result);
 //var_dump($result);
 
-//innitiates connexion to server
-$new_pdo = new Connexion();
-
-$conn= $new_pdo->PDOInit();
-
-
 //select info from festival
-
 foreach($result as $k=> $res){
         $stmt = $conn->prepare("SELECT * FROM festival where id_commune=$res");
         $stmt->execute();

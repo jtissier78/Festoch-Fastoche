@@ -1,9 +1,11 @@
-
+$(function () {
+    $('.selectpicker2').selectpicker();
+});
 
 $(document).ready(function() {  
     $("#but4").click(function(){
         let cat = [];
-        $.each($("#picker2 option:selected"), function(){            
+        $.each($(".selectpicker2 option:selected"), function(){            
             cat.push($(this).val());
         });
         //console.log("ville selectione - " + villes.join(", "));
