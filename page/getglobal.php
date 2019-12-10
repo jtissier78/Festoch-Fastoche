@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-
+//get connexion vars
 require "../DataBaseConnect/Classes/Connexion.php";
 
 
@@ -33,7 +33,7 @@ $stmt = $conn->prepare("SELECT * FROM regions where nom= '$data'");
 else{ */
         //var_dump($regions_id);
 
-    if(strlen($_SESSION["cate"])>2 && isset($regions)){
+    if(strlen($_SESSION["cate"])>2 && isset($regions)){ //selected a region and a categorie or more are selected
 
         $cate= json_decode(stripslashes($_SESSION["cate"]));
         
@@ -41,7 +41,7 @@ else{ */
             //select the id's of festivals for the categorie selected
             $a=0;
             foreach($cate as $k=>$cat){
-
+                //select festivals id's that belong to the selected categorie
                 $stmt = $conn->prepare("SELECT * FROM liencatfest where id_Categorie=$cat");
                     $stmt->execute();
 
@@ -73,7 +73,7 @@ else{ */
                 }
 
 
-
+        //selects departments belonging to the region clicked
         $a=0;
         $stmt = $conn->prepare("SELECT * FROM departements where id_Region=$regions_id");
         $stmt->execute();
@@ -83,7 +83,7 @@ else{ */
                 $dep_id[$k]= $v['id'];
             }
 
-            //select info from commune
+            //select id from commune that belong to the chosen departments
         foreach($dep_id as $id){
             $stmt = $conn->prepare("SELECT * FROM commune where id_Departement=$id");
             $stmt->execute();
@@ -94,7 +94,7 @@ else{ */
             }
         }
 
-            if(isset($com_id))
+            if(isset($com_id)) //verify if exists communes on selected department
             {
                 $max=sizeof($com_id);
                         
@@ -120,10 +120,10 @@ else{ */
 
                     //var_dump($festival_latitude);
 
-                    echo "<div class='container'>";
+                    echo "<div class='container'>"; //basic bootstrap to display info
                     echo "<div class='row'>";
                         
-                    for($i=0;$i<$max;$i++){   //display all data for each single festival
+                    for($i=0;$i<$max;$i++){   //display all data for each single festival note: it does not display categorie
                         if(isset($festival_nom[$i][0]))
                         {
                             echo "<ul>";
@@ -173,8 +173,10 @@ else{ */
 
 
 
-    else if(strlen($_SESSION["cate"])<=2 && isset($regions)){ //if user clicked in a region
+    else if(strlen($_SESSION["cate"])<=2 && isset($regions)){ //if user clicked in a region and no categorie is selected
 
+
+        //select ids of departments that belong to selected region
         $a=0;
         $stmt = $conn->prepare("SELECT * FROM departements where id_Region=$regions_id");
         $stmt->execute();
@@ -198,7 +200,7 @@ else{ */
             }
         }
 
-            if(isset($com_id))
+            if(isset($com_id)) //verify if there are any co,,unes inside the chosen departments
             {
                 $max=sizeof($com_id);
                         
@@ -224,7 +226,7 @@ else{ */
 
                     //var_dump($festival_latitude);
 
-                    echo "<div class='container'>";
+                    echo "<div class='container'>"; //basi bootstrap
                     echo "<div class='row'>";
                         
                     for($i=0;$i<$max;$i++){   //display all data for each single festival
@@ -279,8 +281,9 @@ else{ */
 
 
 
-    else if(isset($regions)==false && strlen($_SESSION["cate"])<=2){ //if user clicked in a department
+    else if(isset($regions)==false && strlen($_SESSION["cate"])<=2){ //if user clicked in a department and no categorie is selected
         
+        //get id from selected department
         $stmt = $conn->prepare("SELECT * FROM departements where nom='$data'");
         $stmt->execute();
 
@@ -289,10 +292,10 @@ else{ */
                 $dep_id= $v['id'];
             }
 
-            if(isset($dep_id)){
+            if(isset($dep_id)){ //verify if department exists on DB
 
             
-            //select info from commune
+            //select info from communes belonging to selected department
             $stmt = $conn->prepare("SELECT * FROM commune where id_Departement=$dep_id");
             $stmt->execute();
 
@@ -338,7 +341,7 @@ else{ */
                 $exit=false;
                 $j=0;
                 do{
-                    if(isset($festival_nom[$i][$j]))
+                    if(isset($festival_nom[$i][$j]))  //types festival data if it exists
                     {
                     echo "<li>"; 
                     echo "Nom: ".$festival_nom[$i][$j]."<br>";
@@ -371,12 +374,12 @@ else{ */
 }
 
 
-else if(isset($regions)==false && strlen($_SESSION["cate"])>2){
+else if(isset($regions)==false && strlen($_SESSION["cate"])>2){ //if user clicked over departments and categorie is selected
 
     $cate = json_decode(stripslashes($_SESSION["cate"]));
         
 
-            //select the id's of festivals for the categorie selected
+            //get the id's of festivals for the selected categorie 
             $a=0;
             foreach($cate as $k=>$cat){
 
@@ -390,7 +393,7 @@ else if(isset($regions)==false && strlen($_SESSION["cate"])>2){
                     }
                 }
 
-                //select each festival info
+                //select each festival info belonging to categorie
                 foreach($festList as $k=>$fest){
                     $stmt = $conn->prepare("SELECT * FROM festival where id=$fest");
                     $stmt->execute();
@@ -409,7 +412,7 @@ else if(isset($regions)==false && strlen($_SESSION["cate"])>2){
                 
                 }
 
-
+                //get department id from the selected department
                 $stmt = $conn->prepare("SELECT * FROM departements where nom='$data'");
                 $stmt->execute();
         
@@ -421,7 +424,7 @@ else if(isset($regions)==false && strlen($_SESSION["cate"])>2){
                     if(isset($dep_id)){
         
                     
-                    //select info from commune
+                    //select info from commune if exists
                     $stmt = $conn->prepare("SELECT * FROM commune where id_Departement=$dep_id");
                     $stmt->execute();
         
@@ -435,7 +438,7 @@ else if(isset($regions)==false && strlen($_SESSION["cate"])>2){
         
             $max=sizeof($com_id);
                     
-            //select festival data
+            //select festival data belonging to each commune
             foreach($com_id as $k=> $id){
                     $stmt = $conn->prepare("SELECT * FROM festival where id_commune=$id");
                     $stmt->execute();

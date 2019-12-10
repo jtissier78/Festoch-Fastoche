@@ -20,7 +20,7 @@
     //transforms ajax string into an array
     $result = json_decode(stripslashes($_SESSION["search"]));
 
-
+        //select festivall data from selected communes
     foreach($result as $k=> $res){
         $stmt = $conn->prepare("SELECT * FROM festival where id_commune=$res");
         $stmt->execute();
