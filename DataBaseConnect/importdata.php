@@ -6,7 +6,7 @@ try {
 	$bdd = $dbh->PDOInit();
 	$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
- 	/* $insertRegion =	("INSERT INTO regions (num,nom) 
+	$insertRegion =	("INSERT INTO regions (num,nom) 
 				SELECT :num,:nom
 				WHERE 
 				NOT EXISTS (SELECT * FROM regions WHERE nom = :nom)");
@@ -67,7 +67,7 @@ try {
 			}
 			fclose($handleC); 
 		}
-	} */
+	} 
 	
 	$insertFestival = ("INSERT INTO festival (nom,url,numIdentif,DateCreation,Periodicite,Longitude,Latitude,id_Commune) 
 				SELECT :nom,:url,:numIdentif,:DateCreation,:Periodicite,:Longitude,:Latitude,:id_Commune
@@ -113,7 +113,7 @@ try {
 			$statement->execute();
 		}		 
 		fclose($handleCategorie); 
-	} 
+	}  
 
 	$LienCateFest= ("INSERT INTO liencatfest (id_Categorie,id_Festival)
 				SELECT :idCat,:idFesti
