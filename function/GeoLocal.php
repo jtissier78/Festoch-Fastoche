@@ -10,7 +10,7 @@ $longitude=$_POST['longitude'];
 $latitude=$_POST['latitude'];
 $distance=$_POST['distance'];
 
-$request="SELECT *, SQRT(POW(Longitude-$longitude,2)+POW(Latitude-$latitude,2)) AS Distance FROM Festival HAVING Distance <= $distance";
+$request="SELECT *, SQRT(POW(Longitude-$longitude,2)+POW(Latitude-$latitude,2)) AS Distance FROM Festival INNER JOIN Edition ON Festival.id=Edition.id_Festival HAVING Distance <= $distance";
 $result=$bdd->query($request);
 $n = $result->fetchall();
 $_SESSION['result']=$n;
