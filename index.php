@@ -24,6 +24,7 @@
   <!-- Script date rangepicker -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
+  <script src="js/autoComplete.js"></script>
   <script src="js/CalLoc.js"></script>   <!-- TODO a inserer pour utiliser script de geolocalisation et datepicker. 
   ajouter id=datepicker sur l'element qui doit ouvrir le calendrier.
   ajouter id=geoLoc sur l'element qui doit lancer la géolocalisation. pour l'instant réglé à 50 unite gps
@@ -57,8 +58,9 @@
                         <li class="nav-item">
                             <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i> <span class="d-none d-sm-inline"><!-- Search form -->
                             <form class="form-inline active-cyan-4">
-                            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                                aria-label="Search">
+                            <span id="city-container">
+                            <!-- <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search" id="city"> -->
+                            <input class="form-control form-control-sm mr-3 w-75" type="text" name="fancy-checkbox-default5" id="city" autocomplete="on"/>
                             <i class="fas fa-search" aria-hidden="true"></i>
                             </form></span></a>
                             <div class="collapse" id="submenu1" aria-expanded="false">
