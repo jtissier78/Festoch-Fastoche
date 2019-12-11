@@ -7,8 +7,8 @@ foreach ($_SESSION['result'] as $result) {?>
     $result['id'];echo"<br>";
     echo "<h1>".$result[1]."</h1>";
     echo "<br>";
-    echo "<a href=\"".$result['url']."\">Site du Festival</a>"
-    ;echo"<br>";
+    echo "<a href=\"".$result['url']."\">Site du Festival</a>";
+    echo"<br>";
     //echo $result['numIdentif'];echo"<br>";
     echo $result['DateCreation'];echo"<br>";
     //if (!empty($result['Periodicite'])) {
