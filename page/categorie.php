@@ -26,7 +26,7 @@ foreach($stmt->fetchAll() as $k=>$v) {
 
 <div class="row">
         <div class="col-lg-6 mx-auto">
-            <button id="but4" type="button" class="btn btn-primary">Categorie </button>
+            <button id="but4" type="button" class="btn btn-secondary">Categorie </button>
             <!-- Multiselect dropdown -->
             <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker2 w-20" id="picker2">
             <?php   
